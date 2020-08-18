@@ -1,0 +1,33 @@
+$fontColor-white: #fff;
+$fontColor-lightGray: #919191;
+$borderColor: #e7e7e7;
+$backgroundColor: #000;
+
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin centerSetDirection($direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+}
+@mixin flexCenterAndSetJustify($justify-content: center) {
+  display: flex;
+  align-items: center;
+  justify-content: $justify-content;
+}
+
+@mixin fontRegular {
+  font-family: "DDINRegular";
+  font-weight: normal;
+  font-style: normal;
+}
+
+@mixin fontBold {
+  font-family: "DDINBold";
+  font-weight: normal;
+  font-style: normal;
+}
