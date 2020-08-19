@@ -1,0 +1,9 @@
+@import "../../../Styles/common.scss";
+
+.Stats {
+  height: 322px;
+  .statsContents {
+    padding: 75px 0;
+    @include flexCenterAndSetJustify(space-around);
+  }
+}
