@@ -5,7 +5,7 @@ import "./Stats.scss";
 class Stats extends Component {
   render() {
     return (
-      <section className="Stats">
+      <section id="Stats">
         <article className="statsContents">
           {STATS_INFO.map((el) => {
             const { statName, statValue, statDescription } = el;
