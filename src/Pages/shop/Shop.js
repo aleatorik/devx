@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import "./Shop.scss";
+import Product from "./Components/product/Product";
 
 class Shop extends Component {
   render() {
@@ -11,7 +11,7 @@ class Shop extends Component {
           <header className="pageHeader">
             <div className="container">
               <div className="containerCenter">
-                <h1 className="containerHeading Heading">MENS</h1>
+                <h1 className="containerHeading Heading">MEN'S T-SHIRTS</h1>
               </div>
             </div>
           </header>
@@ -21,222 +21,20 @@ class Shop extends Component {
                 <div className="productListWrapper">
                   <div className="productList__flex">
                     {/* Component(2x4 상품) x 3  */}
-                    <div className="productContainer">
-                      <div className="productItem">
-                        <Link className="productItem__wrapper" to="/detail">
-                          <div className="imgFixedCtn">
-                            <img alt="tshirt" src="/images/shop/tshirt.png" />
-                            <span className="imageLoader"></span>
-                          </div>
-                        </Link>
-                        <div className="productItemInfo">
-                          <div className="productItem__title Heading">
-                            <Link to="/detail">
-                              Men's Demo 2 Mission T-Shirt
-                            </Link>
-                          </div>
-                          <div className="productItem__priceList Heading">
-                            <span className="productItem__price price">
-                              <span
-                                className="money"
-                                data-product-id="123456789"
-                              >
-                                $30.00
-                              </span>
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="productContainer">
-                      <div className="productItem">
-                        <Link className="productItem__wrapper" to="/detail">
-                          <div className="imgFixedCtn">
-                            <img alt="tshirt" src="/images/shop/tshirt.png" />
-                            <span className="imageLoader"></span>
-                          </div>
-                        </Link>
-                        <div className="productItemInfo">
-                          <div className="productItem__title Heading">
-                            <Link to="/detail">
-                              Men's Demo 2 Mission T-Shirt
-                            </Link>
-                          </div>
-                          <div className="productItem__priceList Heading">
-                            <span className="productItem__price price">
-                              <span
-                                className="money"
-                                data-product-id="123456789"
-                              >
-                                $30.00
-                              </span>
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="productContainer">
-                      <div className="productItem">
-                        <Link className="productItem__wrapper" to="/detail">
-                          <div className="imgFixedCtn">
-                            <img alt="tshirt" src="/images/shop/tshirt.png" />
-                            <span className="imageLoader"></span>
-                          </div>
-                        </Link>
-                        <div className="productItemInfo">
-                          <div className="productItem__title Heading">
-                            <Link to="/detail">
-                              Men's Demo 2 Mission T-Shirt
-                            </Link>
-                          </div>
-                          <div className="productItem__priceList Heading">
-                            <span className="productItem__price price">
-                              <span
-                                className="money"
-                                data-product-id="123456789"
-                              >
-                                $30.00
-                              </span>
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="productContainer">
-                      <div className="productItem">
-                        <Link className="productItem__wrapper" to="/detail">
-                          <div className="imgFixedCtn">
-                            <img alt="tshirt" src="/images/shop/tshirt.png" />
-                            <span className="imageLoader"></span>
-                          </div>
-                        </Link>
-                        <div className="productItemInfo">
-                          <div className="productItem__title Heading">
-                            <Link to="/detail">
-                              Men's Demo 2 Mission T-Shirt
-                            </Link>
-                          </div>
-                          <div className="productItem__priceList Heading">
-                            <span className="productItem__price price">
-                              <span
-                                className="money"
-                                data-product-id="123456789"
-                              >
-                                $30.00
-                              </span>
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="productContainer">
-                      <div className="productItem">
-                        <Link className="productItem__wrapper" to="/detail">
-                          <div className="imgFixedCtn">
-                            <img alt="tshirt" src="/images/shop/tshirt.png" />
-                            <span className="imageLoader"></span>
-                          </div>
-                        </Link>
-                        <div className="productItemInfo">
-                          <div className="productItem__title Heading">
-                            <Link to="/detail">
-                              Men's Demo 2 Mission T-Shirt
-                            </Link>
-                          </div>
-                          <div className="productItem__priceList Heading">
-                            <span className="productItem__price price">
-                              <span
-                                className="money"
-                                data-product-id="123456789"
-                              >
-                                $30.00
-                              </span>
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="productContainer">
-                      <div className="productItem">
-                        <Link className="productItem__wrapper" to="/detail">
-                          <div className="imgFixedCtn">
-                            <img alt="tshirt" src="/images/shop/tshirt.png" />
-                            <span className="imageLoader"></span>
-                          </div>
-                        </Link>
-                        <div className="productItemInfo">
-                          <div className="productItem__title Heading">
-                            <Link to="/detail">
-                              Men's Demo 2 Mission T-Shirt
-                            </Link>
-                          </div>
-                          <div className="productItem__priceList Heading">
-                            <span className="productItem__price price">
-                              <span
-                                className="money"
-                                data-product-id="123456789"
-                              >
-                                $30.00
-                              </span>
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="productContainer">
-                      <div className="productItem">
-                        <Link className="productItem__wrapper" to="/detail">
-                          <div className="imgFixedCtn">
-                            <img alt="tshirt" src="/images/shop/tshirt.png" />
-                            <span className="imageLoader"></span>
-                          </div>
-                        </Link>
-                        <div className="productItemInfo">
-                          <div className="productItem__title Heading">
-                            <Link to="/detail">
-                              Men's Demo 2 Mission T-Shirt
-                            </Link>
-                          </div>
-                          <div className="productItem__priceList Heading">
-                            <span className="productItem__price price">
-                              <span
-                                className="money"
-                                data-product-id="123456789"
-                              >
-                                $30.00
-                              </span>
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="productContainer">
-                      <div className="productItem">
-                        <Link className="productItem__wrapper" to="/detail">
-                          <div className="imgFixedCtn">
-                            <img alt="tshirt" src="/images/shop/tshirt.png" />
-                            <span className="imageLoader"></span>
-                          </div>
-                        </Link>
-                        <div className="productItemInfo">
-                          <div className="productItem__title Heading">
-                            <Link to="/detail">
-                              Men's Demo 2 Mission T-Shirt
-                            </Link>
-                          </div>
-                          <div className="productItem__priceList Heading">
-                            <span className="productItem__price price">
-                              <span
-                                className="money"
-                                data-product-id="123456789"
-                              >
-                                $30.00
-                              </span>
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    <Product />
+                    <Product />
+                    <Product />
+                    <Product />
+                    <Product />
+                    <Product />
+                    <Product />
+                    <Product />
+                    <Product />
+                    <Product />
+                    <Product />
+                    <Product />
+                    <Product />
+                    <Product />
                   </div>
                 </div>
               </div>

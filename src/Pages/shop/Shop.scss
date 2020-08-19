@@ -1,8 +1,5 @@
 @import "../../Styles/common.scss";
 
-.main {
-}
-
 .pageHeader {
   margin: 50px;
   .container {
@@ -16,52 +13,17 @@
   }
 }
 
-.collectionMain {
-  .collectionInner {
-    .collectionInner__products {
-    }
-    .productList__flex {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      width: 1240px;
-      padding-left: 20px;
-      margin-left: 20px;
-    }
-  }
-}
-
-.productContainer {
+.productList__flex {
+  @include center;
+  flex-wrap: wrap;
+  margin-left: 20px;
+  padding: 0 45px;
   padding-left: 20px;
-  margin-bottom: 40px;
-  vertical-align: middle;
-  .productItem {
-    text-align: center;
-    white-space: normal;
-    .productItem__wrapper {
-      background-color: transparent;
-      text-decoration: none;
-      .imgFixedCtn {
-        max-width: 900px;
-        margin-left: auto;
-        margin-right: auto;
-        --aspect-ratio: 1;
-        padding-bottom: 0 -important;
-      }
-      .productItemInfo {
-        font-size: 13px;
-        margin-top: 20px;
-
-        .productItem__title {
-          margin-bottom: 4px;
-        }
-      }
-    }
-  }
 }
 
 .Heading {
   @include fontBold;
+  font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }

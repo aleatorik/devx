@@ -1,0 +1,30 @@
+@import "../../../../Styles//common.scss";
+
+.product_wrapper {
+  width: 25%;
+}
+
+.productContainer {
+  padding-left: 20px;
+  margin-bottom: 40px;
+  .productItem {
+    text-align: center;
+    white-space: normal;
+    background-color: transparent;
+    text-decoration: none;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+    .productItemInfo {
+      font-size: 13px;
+      margin-top: 20px;
+      .productItem__title {
+        margin-bottom: 4px;
+        .productItem__wrapper {
+          color: #000;
+        }
+      }
+    }
+  }
+}
