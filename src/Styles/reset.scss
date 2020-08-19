@@ -85,6 +85,10 @@ video {
   font: inherit;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 ul,
 ol {
   list-style: none;
