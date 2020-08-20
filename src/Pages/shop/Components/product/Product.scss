@@ -1,6 +1,6 @@
 @import "../../../../Styles//common.scss";
 
-.product_wrapper {
+.product__wrapper {
   width: 25%;
 }
 
@@ -12,18 +12,38 @@
     white-space: normal;
     background-color: transparent;
     text-decoration: none;
-    img {
-      width: 100%;
+    .imgFixedCtn {
+      position: relative;
+      top: 0;
+      left: 0;
       height: 100%;
-    }
-    .productItemInfo {
-      font-size: 13px;
-      margin-top: 20px;
-      .productItem__title {
-        margin-bottom: 4px;
-        .productItem__wrapper {
-          color: #000;
+      width: 100%;
+      .productItem__img {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      .back-img {
+        position: absolute;
+        opacity: 0;
+        &:hover {
+          opacity: 1;
         }
+      }
+      .img--fadeIn {
+        transition: opacity 0.3s ease;
+      }
+    }
+  }
+  .productItemInfo {
+    font-size: 13px;
+    margin-top: 20px;
+    .productItem__title {
+      margin-bottom: 4px;
+      .productItem__wrapper {
+        text-decoration: none;
+        color: #000;
       }
     }
   }
