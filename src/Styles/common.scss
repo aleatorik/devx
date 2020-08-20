@@ -8,12 +8,14 @@ $backgroundColor: #000;
   justify-content: center;
   align-items: center;
 }
-@mixin centerSetDirection($direction: row) {
+
+@mixin flexCenterAndSetDirection($direction: row) {
   display: flex;
   flex-direction: $direction;
   justify-content: center;
   align-items: center;
 }
+
 @mixin flexCenterAndSetJustify($justify-content: center) {
   display: flex;
   align-items: center;
@@ -30,4 +32,21 @@ $backgroundColor: #000;
   font-family: "DDINBold";
   font-weight: normal;
   font-style: normal;
+}
+
+@mixin bgImgDefualtSet {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
