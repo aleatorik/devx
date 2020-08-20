@@ -19,10 +19,10 @@ class Engines extends Component {
           }`}
         ></div>
         <article className="enginesContents fadeinAnimation">
-          <div className="enginesContentsTap">
+          <div className="enginesContentsTab">
             <span className="category">ENGINES</span>
             <h1>MERLIN</h1>
-            <div className="tapSelectArea">
+            <div className="tabSelectArea">
               <button
                 className={activeTab === "seaLevel" ? "" : "unactive"}
                 onClick={() => {
