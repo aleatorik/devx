@@ -1,6 +1,9 @@
 @import "../../Styles/common.scss";
 
 .Falcon9 {
+  @include fontRegular;
+  color: $fontColor-white;
+
   @keyframes fadeIn {
     from {
       opacity: 0;
@@ -11,9 +14,6 @@
       transform: translateY(0);
     }
   }
-
-  @include fontRegular;
-  color: $fontColor-white;
 
   .fadeinAnimation {
     animation: fadeIn 1.5s ease-in-out forwards;
