@@ -11,7 +11,6 @@ class Video extends Component {
             width="64.025"
             height="81.486"
             viewBox="0 0 64.025 81.486"
-            class="play-arrow"
           >
             <g>
               <path
@@ -23,9 +22,9 @@ class Video extends Component {
           </svg>
         </div>
         <article className="videoContents">
-          <div className="description">
-            <span className="fadeinAnimation">VIDEO</span>
-            <h1 className="fadeinAnimation">FALCON 9 IN FLIGHT</h1>
+          <div className="description fadeinAnimation">
+            <span>VIDEO</span>
+            <h1>FALCON 9 IN FLIGHT</h1>
           </div>
         </article>
       </section>

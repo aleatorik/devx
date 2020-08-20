@@ -1,25 +1,15 @@
 @import "../../../Styles/common.scss";
 
 .Engines {
-  .backgroundTap {
-    height: 100%;
-    @include bgImgDefualtSet;
+  .background {
+    transition: background-image 300ms ease-in-out;
   }
 
-  .seaLevelBg {
+  .seaLevelbg {
     background-image: url("/images/falcon9/merlinSeaLevel.webp");
   }
-
-  .vacuumBg {
+  .vacuumbg {
     background-image: url("/images/falcon9/merlinVacuum.webp");
-  }
-
-  .seaLevel {
-    // display: none;
-  }
-
-  .vaccum {
-    display: none;
   }
 
   .enginesContentsTap {
@@ -52,8 +42,18 @@
         color: $fontColor-white;
         background-color: $backgroundColor;
         padding: 0;
+        padding-bottom: 2px;
         border: none;
         outline: none;
+        &:focus {
+          border-bottom: 1px solid $fontColor-white;
+          margin-bottom: -1px;
+        }
+      }
+
+      .unactive {
+        color: $fontColor-lightGray;
+        opacity: 0.8;
       }
 
       .hline {
@@ -67,9 +67,9 @@
     .description {
       @include fontRegular;
       margin: 20px 0 15px;
-      font-size: 16px;
-      font-weight: 200;
-      line-height: 1.6;
+      font-size: 17px;
+      font-weight: 100;
+      line-height: 1.75;
     }
 
     table {
