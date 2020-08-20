@@ -17,10 +17,10 @@ class Engines extends Component {
           className={`background ${
             activeTab === "seaLevel" ? "seaLevelbg" : "vacuumbg"
           }`}
-        ></div>
-        <article className="enginesContents fadeinAnimation">
+        />
+        <article className="fadeinAnimation">
           <div className="enginesContentsTab">
-            <span className="category">ENGINES</span>
+            <p className="category">ENGINES</p>
             <h1>MERLIN</h1>
             <div className="tabSelectArea">
               <button
@@ -31,7 +31,7 @@ class Engines extends Component {
               >
                 SEA LEVEL
               </button>
-              <div className="hline"></div>
+              <div className="hline" />
               <button
                 className={activeTab === "vacuum" ? "" : "unactive"}
                 onClick={() => {
@@ -48,13 +48,13 @@ class Engines extends Component {
             </p>
             <table className="specTable">
               <tbody>
-                {tableData.map((el, idx) => {
+                {tableData.map(({ field, firstData, secondData }, idx) => {
                   return (
                     <tr key={idx}>
-                      <td>{el.field}</td>
+                      <td>{field}</td>
                       <td>
-                        {el.firstData}
-                        <span>&nbsp;{el.secondData}</span>
+                        {firstData}
+                        <span>&nbsp;{secondData}</span>
                       </td>
                     </tr>
                   );

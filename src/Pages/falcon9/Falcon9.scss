@@ -1,5 +1,21 @@
 @import "../../Styles/common.scss";
 
+@mixin sectionStyle {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+}
+
+@mixin articleStyle {
+  position: relative;
+  max-width: 1400px;
+  height: 100%;
+  margin: 0 auto;
+  @include fontBold;
+  color: $fontColor-white;
+}
+
 .Falcon9 {
   @include fontRegular;
   color: $fontColor-white;
@@ -24,21 +40,5 @@
     @include bgImgDefualtSet;
     width: 100%;
     height: 100%;
-  }
-
-  section {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    text-align: center;
-  }
-
-  article {
-    position: relative;
-    max-width: 1400px;
-    height: 100%;
-    margin: 0 auto;
-    @include fontBold;
-    color: $fontColor-white;
   }
 }

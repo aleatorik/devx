@@ -1,6 +1,9 @@
 @import "../../../Styles/common.scss";
+@import "../Falcon9.scss";
 
 .Video {
+  @include sectionStyle;
+
   .background {
     background-image: url("/images/falcon9/f9VideoThumbnail.jpg");
 
@@ -14,33 +17,36 @@
       transition: transform 300ms ease-in-out;
     }
   }
+  article {
+    @include articleStyle;
 
-  .description {
-    position: absolute;
-    left: 50px;
-    bottom: 15%;
-    max-width: 520px;
-    text-align: left;
+    .description {
+      position: absolute;
+      left: 50px;
+      bottom: 15%;
+      max-width: 520px;
+      text-align: left;
 
-    span {
-      display: block;
-      font-size: 20px;
-      font-weight: 300;
-    }
+      span {
+        display: block;
+        font-size: 20px;
+        font-weight: 300;
+      }
 
-    h1 {
-      margin-top: 15px;
-      margin-bottom: 20px;
-      @include fontBold;
-      font-size: 60px;
-      font-weight: 600;
+      h1 {
+        margin-top: 15px;
+        margin-bottom: 20px;
+        @include fontBold;
+        font-size: 60px;
+        font-weight: 600;
+      }
     }
   }
-}
 
-.Video:hover {
-  svg {
-    transform: translate(-50%, -50%) scale(0.8);
-    transition: transform 300ms ease-in-out;
+  &:hover {
+    svg {
+      transform: translate(-50%, -50%) scale(0.8);
+      transition: transform 300ms ease-in-out;
+    }
   }
 }

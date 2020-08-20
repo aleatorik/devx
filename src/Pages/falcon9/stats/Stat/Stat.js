@@ -10,7 +10,7 @@ class Stat extends Component {
 
   increaseStat = (stat, limit) => {
     if (this.state[stat] < limit) {
-      this.setState({ [stat]: this.state[stat] + 1 });
+      this.setState({ [stat]: ++this.state[stat] });
     }
   };
 

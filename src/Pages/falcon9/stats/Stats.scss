@@ -1,9 +1,12 @@
 @import "../../../Styles/common.scss";
+@import "../Falcon9.scss";
 
-#Stats {
+.Stats {
+  @include sectionStyle;
   height: 322px;
 
   .statsContents {
+    @include articleStyle;
     @include flexCenterAndSetJustify(space-around);
     padding: 75px 0;
   }

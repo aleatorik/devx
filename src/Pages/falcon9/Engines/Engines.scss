@@ -1,6 +1,9 @@
 @import "../../../Styles/common.scss";
+@import "../Falcon9.scss";
 
 .Engines {
+  @include sectionStyle;
+
   .background {
     transition: background-image 300ms ease-in-out;
   }
@@ -12,89 +15,92 @@
     background-image: url("/images/falcon9/merlinVacuum.webp");
   }
 
-  .enginesContentsTab {
-    position: absolute;
-    top: 20%;
-    left: 50px;
-    max-width: 520px;
-    text-align: left;
+  article {
+    @include articleStyle;
 
-    .category {
-      display: block;
-      margin-bottom: 10px;
-      font-size: 20px;
-      font-weight: 400;
-    }
+    .enginesContentsTab {
+      position: absolute;
+      top: 13%;
+      left: 50px;
+      max-width: 520px;
+      text-align: left;
 
-    h1 {
-      @include fontBold;
-      font-size: 46px;
-      font-weight: 600;
-    }
-
-    .tabSelectArea {
-      @include flexCenterAndSetJustify(flex-start);
-      margin: 50px 0 30px;
-
-      button {
-        @include fontRegular;
-        font-size: 16px;
-        color: $fontColor-white;
-        background-color: $backgroundColor;
-        padding: 0;
-        padding-bottom: 2px;
-        border: none;
-        outline: none;
-        &:focus {
-          border-bottom: 1px solid $fontColor-white;
-          margin-bottom: -1px;
-        }
+      .category {
+        margin-bottom: 10px;
+        font-size: 20px;
+        font-weight: 400;
       }
 
-      .unactive {
-        color: $fontColor-lightGray;
-        opacity: 0.8;
+      h1 {
+        @include fontBold;
+        font-size: 46px;
+        font-weight: 600;
       }
 
-      .hline {
-        width: 1px;
-        height: 16px;
-        margin: 0 10px;
-        background-color: $fontColor-lightGray;
-      }
-    }
+      .tabSelectArea {
+        @include flexCenterAndSetJustify(flex-start);
+        margin: 50px 0 30px;
 
-    .description {
-      @include fontRegular;
-      margin: 20px 0 15px;
-      font-size: 17px;
-      font-weight: 100;
-      line-height: 1.75;
-    }
-
-    table {
-      width: 100%;
-      margin-top: 30px;
-
-      tr {
-        @include flexCenterAndSetJustify(space-between);
-        padding: 20px 0;
-        border-bottom: 1px solid $fontColor-lightGray;
-
-        td {
-          height: 18px;
-        }
-
-        td:first-child {
-          @include fontBold;
-          font-weight: 600;
-          font-size: 14px;
-        }
-
-        td:last-child {
+        button {
+          @include fontRegular;
+          padding: 0;
+          padding-bottom: 2px;
+          border: none;
+          outline: none;
+          background-color: $backgroundColor;
           font-size: 16px;
-          span {
-            color: $fontColor-lightGray;
+          color: $fontColor-white;
+          &:focus {
+            border-bottom: 1px solid $fontColor-white;
+            margin-bottom: -1px;
+          }
+        }
+
+        .unactive {
+          color: $fontColor-lightGray;
+          opacity: 0.8;
+        }
+
+        .hline {
+          width: 1px;
+          height: 16px;
+          margin: 0 10px;
+          background-color: $fontColor-lightGray;
+        }
+      }
+
+      .description {
+        margin: 20px 0 15px;
+        @include fontRegular;
+        font-size: 17px;
+        font-weight: 100;
+        line-height: 1.75;
+      }
+
+      table {
+        width: 100%;
+        margin-top: 30px;
+
+        tr {
+          @include flexCenterAndSetJustify(space-between);
+          padding: 20px 0;
+          border-bottom: 1px solid $fontColor-lightGray;
+
+          td {
+            height: 18px;
+          }
+
+          td:first-child {
+            @include fontBold;
+            font-weight: 600;
+            font-size: 14px;
+          }
+
+          td:last-child {
+            font-size: 16px;
+            span {
+              color: $fontColor-lightGray;
+            }
           }
         }
       }
