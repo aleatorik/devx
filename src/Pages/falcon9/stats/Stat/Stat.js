@@ -15,8 +15,11 @@ class Stat extends Component {
   };
 
   intervalIncrease = (stat, limit) => {
-    setInterval(() => {
+    let interval = setInterval(() => {
       this.increaseStat(stat, limit);
+      if (this.state[stat] === limit) {
+        clearInterval(interval);
+      }
     }, 10);
   };
 
