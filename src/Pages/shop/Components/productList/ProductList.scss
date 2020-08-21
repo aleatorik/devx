@@ -1,0 +1,9 @@
+@import "../../../../Styles/common.scss";
+
+.productList {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 20px;
+  padding: 0 45px;
+  padding-left: 20px;
+}
