@@ -1,0 +1,40 @@
+@import '../../Styles/common.scss';
+
+.inputContainer{
+    width: 400px;
+    border: 1px solid $borderColor;
+    background: white;
+    @include fontBold;
+    font-size: 15px;
+    padding: 12px 14px;
+    position: relative;
+    
+    div{
+        padding: 0 3px;
+        font-size: 12px !important;
+        position: absolute;
+        top: -19px;
+        background: white;
+    }
+
+    input{
+        width: 100%;
+        border: none;
+        outline: none;
+    }
+
+    button{
+        font-size: 13px;
+        position: absolute;
+        top: 15px;
+        right: 14px;
+        padding: 0;
+        border: none;
+        background: none;
+        outline: none;
+
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}

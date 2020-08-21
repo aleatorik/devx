@@ -1,0 +1,31 @@
+@import '../../Styles/common.scss';
+
+.container{
+    height: 100vh;
+    @include center;
+}
+
+.form{
+    @include center;
+    @include flexCenterAndSetDirection($direction: column);
+    @include fontBold;
+    font-size: 15px;
+
+    div{
+        margin: 6px 0;
+    }
+    
+    div:first-child{
+        font-weight: bold;
+        font-size: 25px;
+        margin: 10px 0;
+    }
+
+    div:nth-child(2){
+        margin: 20px 0;
+    }
+
+    span:last-child{
+        color: #666;
+    }
+}
