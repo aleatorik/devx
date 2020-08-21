@@ -1,0 +1,14 @@
+@import "../../../../Styles/common.scss";
+
+.Stat {
+  @include flexCenterAndSetDirection(column);
+
+  .statNumber {
+    font-size: 140px;
+  }
+
+  .statDescription {
+    font-size: 22px;
+    font-weight: 200;
+  }
+}

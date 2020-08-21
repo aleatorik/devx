@@ -1,0 +1,32 @@
+@import "../../../Styles/common.scss";
+@import "../Falcon9.scss";
+
+.Feature {
+  @include sectionStyle;
+  .background {
+    background-image: url("/images/falcon9/f9Feature.webp");
+  }
+
+  article {
+    @include articleStyle;
+
+    .featureContents {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) translateY(-50px);
+
+      h1 {
+        margin-bottom: 20px;
+        @include fontBold;
+        font-size: 100px;
+        font-weight: 600;
+      }
+
+      h3 {
+        font-size: 20px;
+        font-weight: 200;
+      }
+    }
+  }
+}

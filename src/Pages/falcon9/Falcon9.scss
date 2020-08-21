@@ -1,0 +1,44 @@
+@import "../../Styles/common.scss";
+
+@mixin sectionStyle {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+}
+
+@mixin articleStyle {
+  position: relative;
+  max-width: 1400px;
+  height: 100%;
+  margin: 0 auto;
+  @include fontBold;
+  color: $fontColor-white;
+}
+
+.Falcon9 {
+  @include fontRegular;
+  color: $fontColor-white;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .fadeinAnimation {
+    animation: fadeIn 1.5s ease-in-out forwards;
+  }
+
+  .background {
+    position: absolute;
+    @include bgImgDefualtSet;
+    width: 100%;
+    height: 100%;
+  }
+}
