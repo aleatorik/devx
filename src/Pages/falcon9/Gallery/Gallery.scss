@@ -1,0 +1,6 @@
+@import "../Falcon9.scss";
+
+.Gallery {
+  @include sectionStyle;
+  overflow-x: hidden;
+}
