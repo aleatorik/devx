@@ -20,18 +20,14 @@ class Main extends Component {
 
   render() {
     return (
-      <div className='main'>
+      <div className='Main'>
         <Nav scrollPosition={this.state.scrollPosition}/>
-        <div className='mainBG1'>
-          <Account />
-          {/* <Register /> */}
-        </div>
-        <div className='mainBG2'></div>
-        <div className='mainBG3'></div>
-        <div className='mainBG4'></div>
-        <div className='mainBGShort'></div>
-        <div className='mainBG5'></div>
-        {/* <LinkBox /> */}
+        <div className='bg-main' />
+        <div className='bg-starlink' />
+        <div className='bg-starship' />
+        <div className='bg-return' />
+        <div className='bg-dragon' />
+        <div className='bg-nasa' />
         <Footer />
       </div>
     );

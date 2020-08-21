@@ -1,31 +1,35 @@
 @import '../../Styles/common.scss';
 
-.container{
+.Account-container {
     height: 100vh;
     @include center;
-}
 
-.form{
-    @include center;
-    @include flexCenterAndSetDirection($direction: column);
-    @include fontBold;
-    font-size: 15px;
-
-    div{
-        margin: 6px 0;
-    }
+    .account-form {
+        @include center;
+        @include flexCenterAndSetDirection($direction: column);
+        @include fontBold;
+        font-size: 15px;
     
-    div:first-child{
-        font-weight: bold;
-        font-size: 25px;
-        margin: 10px 0;
-    }
+        div {
+            margin: 8px 0;
 
-    div:nth-child(2){
-        margin: 20px 0;
-    }
+            &:nth-child(2){
+                margin-bottom: 20px;
+            }
+        }
 
-    span:last-child{
-        color: #666;
+        .login-text{
+            font-size: 25px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .accountBottom{
+            margin-top: 15px;
+        }
+    
+        span:last-child {
+            color: #888;
+        }
     }
 }

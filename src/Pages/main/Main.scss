@@ -1,35 +1,34 @@
-.mainBG1{
-    width: 100%;
-    height: 100vh;
-    background: white;
-}
+$main-height: 100vh;
 
-.mainBG2{
-    width: 100%;
-    height: 100vh;
-    background: skyblue;
-}
-
-.mainBG3{
-    width: 100%;
-    height: 100vh;
-    background: thistle;
-}
-
-.mainBG4{
-    width: 100%;
-    height: 100vh;
-    background: palegoldenrod;
-}
-
-.mainBGShort{
-    width: 100%;
-    height: 70vh;
-    background: aqua;
-}
-
-.mainBG5{
-    width: 100%;
-    height: 100vh;
-    background: darkorange;
+.Main{
+    .bg-main {
+        height: $main-height;
+        background: pink;
+    }
+    
+    .bg-starlink {
+        height: $main-height;
+        background: skyblue;
+    }
+    
+    .bg-starship {
+        height: $main-height;
+        background: thistle;
+    }
+    
+    .bg-return {
+        height: $main-height;
+        background: palegoldenrod;
+    }
+    
+    .bg-dragon {
+        width: 100%;
+        height: 70vh;
+        background: aqua;
+    }
+    
+    .bg-nasa {
+        height: $main-height;
+        background: darkorange;
+    }
 }

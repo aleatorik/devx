@@ -6,9 +6,9 @@ import './Register.scss';
 class Account extends Component {
     render() {
         return (
-            <div className='container'>
-                <form className='form'>
-                    <div>REGISTER</div>
+            <div className='Register-container'>
+                <form className='register-form'>
+                    <div className="register-text">REGISTER</div>
                     <div>
                         <span>Please fill in the information below:</span>
                     </div>

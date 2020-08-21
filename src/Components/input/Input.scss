@@ -1,39 +1,51 @@
 @import '../../Styles/common.scss';
 
-.inputContainer{
+.Input-Container {
+    position: relative;
     width: 400px;
     border: 1px solid $borderColor;
     background: white;
     @include fontBold;
     font-size: 15px;
     padding: 12px 14px;
-    position: relative;
     
-    div{
-        padding: 0 3px;
-        font-size: 12px !important;
+    .inputFont {
         position: absolute;
-        top: -19px;
+        top: -18px;
+        padding: 0 3px;
         background: white;
+        transition: all 0.5s;
+        font-size: 12px;
+        pointer-events: none;
     }
 
-    input{
+    .placeholder-go-up {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .placeholder-go-down {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    .text-input {
         width: 100%;
         border: none;
         outline: none;
     }
 
-    button{
-        font-size: 13px;
+    .btnForgot {
         position: absolute;
         top: 15px;
         right: 14px;
         padding: 0;
+        font-size: 13px;
         border: none;
         background: none;
         outline: none;
 
-        &:hover{
+        &:hover {
             cursor: pointer;
         }
     }

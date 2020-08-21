@@ -4,11 +4,7 @@ import './Input.scss';
 class Input extends Component {
     state = {
         input: '',
-        style: {
-            opacity: '0',
-            transform: 'translateY(5px)',
-            transition: 'all 0.5s'
-        }
+        placeholderMove: false
     };
 
     handleInputKeyDown = (e) => {
@@ -20,30 +16,25 @@ class Input extends Component {
     handleInputKeyUp = (e) => {
         if(e.target.value.length === 0){
             this.setState({
-                style: {
-                    ...this.state.style,
-                    opacity: '0',
-                    transform: 'translateY(5px)'
-                }
+                placeholderMove: false
             });
         }
         else{
             this.setState({
-                style: {
-                    ...this.state.style,
-                    opacity: '1',
-                    transform: 'translateY(0)'
-                }
+                placeholderMove: true
             });
         }
     };
 
     render() {
+        const {placeHolder, forgotPw} = this.props;
+        const {placeholderMove} = this.state;
+
         return (
-            <div className='inputContainer'>
-                <div style={this.state.style}>{this.props.placeHolder}</div>
-                <input onKeyDown={this.handleInputKeyDown} onKeyUp={this.handleInputKeyUp} placeholder={this.props.placeHolder}/>
-                {this.props.forgotPw ? <button>Forgot password?</button> : ''}
+            <div className="Input-Container">
+                <div className={`inputFont ${placeholderMove ? "placeholder-go-up" : "placeholder-go-down"}`}>{placeHolder}</div>
+                <input className="text-input" onKeyDown={this.handleInputKeyDown} onKeyUp={this.handleInputKeyUp} placeholder={placeHolder}/>
+                {forgotPw ? <button className="btnForgot">Forgot password?</button> : ''}
             </div>
         );
     }

@@ -3,9 +3,11 @@ import './Button.scss';
 
 class Button extends Component {
     render() {
+        const {text} = this.props;
+
         return (
-            <div className='buttonContainer'>
-                <button>{this.props.text}</button>
+            <div className="Button-Container">
+                <button>{text}</button>
             </div>
         );
     }

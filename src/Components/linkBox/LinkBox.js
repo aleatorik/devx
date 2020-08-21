@@ -4,9 +4,9 @@ import './LinkBox.scss';
 class LinkBox extends Component {
     render() {
         return (
-            <div className='box' href='https://www.google.com'>
+            <div className='Link-box'>
                 REPLAY
-                <div className='fillBG'></div>
+                <div className='fillBG' />
             </div>
         );
     }

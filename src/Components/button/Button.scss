@@ -1,7 +1,7 @@
 @import '../../Styles/common.scss';
 
-.buttonContainer{
-    button{
+.Button-Container {
+    button {
         width: 400px;
         height: 44px;
         @include fontBold;
@@ -9,7 +9,6 @@
         font-size: 14px;
         color: $fontColor-white;
         background: black;
-        margin: 10px;
         border: none;
         outline: none;
     }

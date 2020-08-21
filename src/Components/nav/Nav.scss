@@ -1,54 +1,62 @@
 @import '../../Styles/common.scss';
 
-.header{
+.Header {
+    position: fixed;
     width: 100%;
     height: 100px;
     @include fontBold;
     font-size: 14px;
     font-weight: bold;
     color: $fontColor-white;
-    position: fixed;
-}
 
-.header-innerContainer{
-    max-width: 1400px;
-    height: 100%;
-    margin: 0 auto;
-    position: relative;
-}
+    .header-innerContainer {
+        position: relative;
+        max-width: 1400px;
+        height: 100%;
+        margin: 0 auto;
 
-.spaceX-icon{
-    width: 210px;
-    height: 30px;
-    position: absolute;
-    top: 30px;
-    left: 50px;
-}
+        .spaceX-icon {
+            position: absolute;
+            width: 210px;
+            height: 30px;
+            top: 30px;
+            left: 50px;
+        }
 
-.navUl{
-    display: flex;
-    position: absolute;
-    top: 38px;
-    left: 285px;
-}
+        .navUl {
+            display: flex;
+            position: absolute;
+            top: 38px;
+            left: 285px;
 
-.navLi{
-    margin: 0 12px;
-
-    &:hover{
-        cursor: pointer;
+            .navLi {
+                margin: 0 12px;
+            
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
     }
 }
 
-.nav-hide{
+.Header-nav-hide {
     transform: translateY(-100px);
     pointer-events: none;
     color: #000;
     transition: all 0.3s cubic-bezier(1, 0, .8, 1);
 }
 
-.nav-show{
+.Header-nav-show {
     transform: translateY(0);
     color: #fff;
     transition: all 0.3s cubic-bezier(1, 0, .8, 1);
+}
+
+.Header-bg-hide{
+    background: none;
+}
+
+.Header-bg-show{
+    background: black;
 }

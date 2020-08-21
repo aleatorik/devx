@@ -1,6 +1,6 @@
 @import '../../Styles/common.scss';
 
-.box{
+.Link-box {
     width: 200px;
     height: 50px;
     border: 2px solid $fontColor-white;
@@ -11,17 +11,19 @@
     font-weight: bold;
     overflow: hidden;
 
-    &:hover .fillBG{
-        top: 2px;
-        background-color: #ffff;
-        transition-property: top;
-        transition-duration: 0.5s;
-        pointer-events: all;
+    &:hover {
+        .fillBG {
+            top: 2px;
+            background-color: #ffff;
+            transition-property: top;
+            transition-duration: 0.5s;
+            pointer-events: all;
+        }
     }
 }
   
 
-.fillBG{
+.fillBG {
     width: 200px;
     height: 50px;
     position: absolute;
