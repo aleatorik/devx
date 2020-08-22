@@ -25,7 +25,7 @@ class Shop extends Component {
           <header className="pageHeader">
             <div className="container">
               <div className="containerCenter">
-                <h1 className="containerHeading Heading">MEN'S T-SHIRTS</h1>
+                <h1 className="containerHeading heading">MEN'S T-SHIRTS</h1>
               </div>
             </div>
           </header>
