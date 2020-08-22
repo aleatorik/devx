@@ -2,21 +2,26 @@
 @import "../Falcon9.scss";
 
 .Video {
+  overflow: hidden;
   @include sectionStyle;
 
   .background {
     background-image: url("/images/falcon9/f9VideoThumbnail.jpg");
 
-    svg {
+    button {
       position: absolute;
-      width: 50px;
-      height: 50px;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+      z-index: 1;
+    }
+    svg {
+      width: 50px;
+      height: 50px;
       transition: transform 300ms ease-in-out;
     }
   }
+
   article {
     @include articleStyle;
 
@@ -44,8 +49,8 @@
   }
 
   &:hover {
-    svg {
-      transform: translate(-50%, -50%) scale(0.8);
+    .PlayIcon {
+      transform: scale(0.8);
       transition: transform 300ms ease-in-out;
     }
   }

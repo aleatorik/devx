@@ -20,6 +20,16 @@
   @include fontRegular;
   color: $fontColor-white;
 
+  button {
+    width: auto;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    border: none;
+    outline: none;
+    background: transparent;
+  }
+
   @keyframes fadeIn {
     from {
       opacity: 0;

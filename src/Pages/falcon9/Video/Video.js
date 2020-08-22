@@ -1,11 +1,39 @@
 import React, { Component } from "react";
+import delayUnmounting from "./YoutubeModal/DelayUnmounting";
+import Modal from "./YoutubeModal/Modal";
 import "./Video.scss";
 
+const DelayModal = delayUnmounting(Modal);
+
 class Video extends Component {
+  state = {
+    isMounted: false,
+  };
+
+  changeModalMount = () => {
+    this.setState({ isMounted: !this.state.isMounted });
+  };
+
   render() {
+    console.log(DelayModal);
     return (
       <section className="Video">
-        <div className="background">{PLAYICON}</div>
+        <DelayModal
+          className={this.state.isMounted ? "downToUp" : "goUp"}
+          delayTime={500}
+          isMounted={this.state.isMounted}
+          changeModalMount={this.changeModalMount}
+        />
+        <div className="background">
+          <button
+            onClick={() => {
+              console.log("clk");
+              this.changeModalMount();
+            }}
+          >
+            {PLAYICON}
+          </button>
+        </div>
         <article>
           <div className="description fadeinAnimation">
             <span>VIDEO</span>
@@ -19,6 +47,7 @@ class Video extends Component {
 
 const PLAYICON = (
   <svg
+    className="PlayIcon"
     xmlns="http://www.w3.org/2000/svg"
     width="64.025"
     height="81.486"
