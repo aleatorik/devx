@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ImgCard from "./ImgCard/ImgCard";
+import Arrows from "./Arrows";
 import "./Slider.scss";
 
 export default class Slider extends Component {
@@ -29,6 +30,7 @@ export default class Slider extends Component {
     const { appearCardIdx, totalCardNum } = this.state;
     const { cardData } = this.props;
     const { goToNext, goToPrev } = this;
+    const { leftArrowSvg, rightArrowSvg } = Arrows;
     return (
       <div className="Slider">
         <article
@@ -46,47 +48,17 @@ export default class Slider extends Component {
             disabled={appearCardIdx === 0}
             onClick={goToPrev}
           >
-            {LEFT_ARROW}
+            {leftArrowSvg}
           </button>
           <button
             className="nextBtn"
             disabled={appearCardIdx === totalCardNum}
             onClick={goToNext}
           >
-            {RIGHT_ARROW}
+            {rightArrowSvg}
           </button>
         </div>
       </div>
     );
   }
 }
-
-const LEFT_ARROW = (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="6"
-    height="10"
-    viewBox="0 0 6 10"
-  >
-    <path
-      d="M5,6a.908.908,0,0,1-.7-.3l-4-4A.967.967,0,0,1,.3.3.967.967,0,0,1,1.7.3L5,3.6,8.3.3A.967.967,0,0,1,9.7.3a.967.967,0,0,1,0,1.4l-4,4A.908.908,0,0,1,5,6Z"
-      transform="translate(6) rotate(90)"
-      fill="#fff"
-    ></path>
-  </svg>
-);
-
-const RIGHT_ARROW = (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="6"
-    height="10"
-    viewBox="0 0 6 10"
-  >
-    <path
-      d="M5,6a.908.908,0,0,1-.7-.3l-4-4A.967.967,0,0,1,.3.3.967.967,0,0,1,1.7.3L5,3.6,8.3.3A.967.967,0,0,1,9.7.3a.967.967,0,0,1,0,1.4l-4,4A.908.908,0,0,1,5,6Z"
-      transform="translate(0 10) rotate(-90)"
-      fill="#fff"
-    ></path>
-  </svg>
-);
