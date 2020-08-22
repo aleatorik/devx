@@ -1,25 +1,25 @@
 @import '../../Styles/common.scss';
 
-.Register-container{
+.RegisterContainer {
     height: 100vh;
     @include center;
     
-    .register-form{
+    .registerForm {
         @include center;
         @include flexCenterAndSetDirection($direction: column);
         @include fontBold;
         font-size: 15px;
     
-        div{
+        div {
             margin: 8px 0;
     
-            &:nth-child(2){
+            &:nth-child(2) {
                 color: #888;
                 margin-bottom: 20px;
             }
         }
     
-        .register-text{
+        .registerText {
             font-size: 25px;
             font-weight: bold;
             margin-bottom: 20px;

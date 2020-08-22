@@ -6,9 +6,9 @@ import './Account.scss';
 class Account extends Component {
     render() {
         return (
-            <div className="Account-container">
-                <form className="account-form">
-                    <div className="login-text">LOGIN</div>
+            <div className="AccountContainer">
+                <form className="accountForm">
+                    <div className="loginText">LOGIN</div>
                     <div>
                         <span>Please enter your e-mail and password:</span>
                     </div>

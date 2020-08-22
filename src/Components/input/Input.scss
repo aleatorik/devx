@@ -1,8 +1,9 @@
 @import '../../Styles/common.scss';
 
-.Input-Container {
+.InputContainer {
     position: relative;
     width: 400px;
+    min-height: 47px;
     border: 1px solid $borderColor;
     background: white;
     @include fontBold;
@@ -19,17 +20,17 @@
         pointer-events: none;
     }
 
-    .placeholder-go-up {
+    .placeholderGoUp {
         opacity: 1;
         transform: translateY(0);
     }
 
-    .placeholder-go-down {
+    .placeholderGoDown {
         opacity: 0;
         transform: translateY(5px);
     }
 
-    .text-input {
+    .textInput {
         width: 100%;
         border: none;
         outline: none;

@@ -1,10 +1,10 @@
 @import '../../Styles/common.scss';
 
-.Account-container {
+.AccountContainer {
     height: 100vh;
     @include center;
 
-    .account-form {
+    .accountForm {
         @include center;
         @include flexCenterAndSetDirection($direction: column);
         @include fontBold;
@@ -13,18 +13,18 @@
         div {
             margin: 8px 0;
 
-            &:nth-child(2){
+            &:nth-child(2) {
                 margin-bottom: 20px;
             }
         }
 
-        .login-text{
+        .loginText {
             font-size: 25px;
             font-weight: bold;
             margin-bottom: 20px;
         }
 
-        .accountBottom{
+        .accountBottom {
             margin-top: 15px;
         }
     

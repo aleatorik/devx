@@ -6,7 +6,7 @@ class Button extends Component {
         const {text} = this.props;
 
         return (
-            <div className="Button-Container">
+            <div className="ButtonContainer">
                 <button>{text}</button>
             </div>
         );

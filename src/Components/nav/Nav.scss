@@ -9,13 +9,13 @@
     font-weight: bold;
     color: $fontColor-white;
 
-    .header-innerContainer {
+    .headerInnerContainer {
         position: relative;
         max-width: 1400px;
         height: 100%;
         margin: 0 auto;
 
-        .spaceX-icon {
+        .spaceXIcon {
             position: absolute;
             width: 210px;
             height: 30px;
@@ -40,23 +40,23 @@
     }
 }
 
-.Header-nav-hide {
+.HeaderNavHide {
     transform: translateY(-100px);
     pointer-events: none;
     color: #000;
     transition: all 0.3s cubic-bezier(1, 0, .8, 1);
 }
 
-.Header-nav-show {
+.HeaderNavShow {
     transform: translateY(0);
     color: #fff;
     transition: all 0.3s cubic-bezier(1, 0, .8, 1);
 }
 
-.Header-bg-hide{
+.HeaderBgHide {
     background: none;
 }
 
-.Header-bg-show{
+.HeaderBgShow {
     background: black;
 }

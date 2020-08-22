@@ -18,8 +18,8 @@ class Nav extends Component {
     
     if(prevState.scroll !== scrollPosition){
       this.setState({scroll: scrollPosition,
-        scrollDirection: prevState.scroll < scrollPosition ? true : false,
-        backgroundShow: scroll >= window.innerHeight ? true : false
+        scrollDirection: prevState.scroll < scrollPosition,
+        backgroundShow: scroll >= window.innerHeight
       });
       
       if(scroll >= 150 && scrollDirection && !navHide){
@@ -35,9 +35,9 @@ class Nav extends Component {
     const {navHide, backgroundShow} = this.state;
 
     return (
-      <div className={`Header Header-${navHide ? "nav-hide" : "nav-show"} Header-${backgroundShow ? "bg-show" : "bg-hide"}`}>
-        <div className="header-innerContainer">
-          <div className="spaceX-icon">
+      <div className={`Header Header${navHide ? "NavHide" : "NavShow"} Header${backgroundShow ? "BgShow" : "BgHide"}`}>
+        <div className="headerInnerContainer">
+          <div className="spaceXIcon">
             <SpaceX />
           </div>
           <ul className="navUl">

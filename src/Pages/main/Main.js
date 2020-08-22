@@ -22,12 +22,12 @@ class Main extends Component {
     return (
       <div className='Main'>
         <Nav scrollPosition={this.state.scrollPosition}/>
-        <div className='bg-main' />
-        <div className='bg-starlink' />
-        <div className='bg-starship' />
-        <div className='bg-return' />
-        <div className='bg-dragon' />
-        <div className='bg-nasa' />
+        <div className='bgMain' />
+        <div className='bgStarlink' />
+        <div className='bgStarship' />
+        <div className='bgReturn' />
+        <div className='bgDragon' />
+        <div className='bgNasa' />
         <Footer />
       </div>
     );

@@ -14,16 +14,7 @@ class Input extends Component {
     };
 
     handleInputKeyUp = (e) => {
-        if(e.target.value.length === 0){
-            this.setState({
-                placeholderMove: false
-            });
-        }
-        else{
-            this.setState({
-                placeholderMove: true
-            });
-        }
+        this.setState({placeholderMove: e.target.value.length});
     };
 
     render() {
@@ -31,9 +22,9 @@ class Input extends Component {
         const {placeholderMove} = this.state;
 
         return (
-            <div className="Input-Container">
-                <div className={`inputFont ${placeholderMove ? "placeholder-go-up" : "placeholder-go-down"}`}>{placeHolder}</div>
-                <input className="text-input" onKeyDown={this.handleInputKeyDown} onKeyUp={this.handleInputKeyUp} placeholder={placeHolder}/>
+            <div className="InputContainer">
+                <div className={`inputFont ${placeholderMove ? "placeholderGoUp" : "placeholderGoDown"}`}>{placeHolder}</div>
+                <input className="textInput" onKeyDown={this.handleInputKeyDown} onKeyUp={this.handleInputKeyUp} placeholder={placeHolder}/>
                 {forgotPw ? <button className="btnForgot">Forgot password?</button> : ''}
             </div>
         );

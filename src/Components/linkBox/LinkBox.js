@@ -4,9 +4,9 @@ import './LinkBox.scss';
 class LinkBox extends Component {
     render() {
         return (
-            <div className='Link-box'>
+            <div className="LinkBox">
                 REPLAY
-                <div className='fillBG' />
+                <div className="fillBG" />
             </div>
         );
     }
