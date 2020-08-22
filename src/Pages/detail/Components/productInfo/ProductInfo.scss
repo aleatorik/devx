@@ -50,6 +50,7 @@
 
         .productForm__variants {
           margin-bottom: 25px;
+          -webkit-font-smoothing: antialiased;
 
           .productForm__option {
             position: relative;
@@ -64,7 +65,12 @@
               cursor: pointer;
               user-select: none;
 
-              .icon .icon--selected-arrow {
+              .productForm__optionName {
+                color: $fontColor-lightGray;
+              }
+
+              .icon,
+              .icon--selected-arrow {
                 position: absolute;
                 top: calc(50% - 5px);
                 right: 15px;
@@ -86,10 +92,16 @@
             display: inline-flex;
             align-items: center;
             border: 1px solid #e7e7e7;
-            white-space: nowrap;
 
-            .decrease-quantity {
+            .quantitySelector__large,
+            .quantitySelector__btn {
               padding: 10px 20px;
+            }
+
+            .quantitySelector__large,
+            svg {
+              width: 11px;
+              height: 11px;
             }
 
             .quantitySelector__currentQuantity {
@@ -133,6 +145,7 @@
           .product__quickNav,
           svg {
             position: absolute;
+            color: #000;
             top: calc(50% - 10px);
             right: 18px;
             height: 18px;
@@ -163,7 +176,7 @@ input {
 
 .Heading {
   font-family: "DIN Neuzeit Grotesk", sans-serif;
-  font-weight: 700;
+
   font-style: normal;
   color: #000;
   transition: color 0.2s ease-in-out;
@@ -188,6 +201,7 @@ input {
 
 .icon {
   display: inline-block;
+  color: $fontColor-lightGray;
   fill: currentColor;
   vertical-align: middle;
   stroke-width: 1px;
