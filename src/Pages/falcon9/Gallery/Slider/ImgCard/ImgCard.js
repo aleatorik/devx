@@ -7,7 +7,7 @@ export default class ImgCard extends Component {
     return (
       <div className="ImgCard">
         <picture className="imageWrapper">
-          <img src={imgSrc} alt="" />
+          <img alt={description} src={imgSrc} />
         </picture>
         <p className="description">{description}</p>
       </div>
