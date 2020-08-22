@@ -4,23 +4,25 @@
   background-color: #ffffff;
 }
 
-.pageHeader {
-  margin: 50px;
-  .container {
-    display: flex;
-    justify-content: center;
-    padding: 0 80px;
-    .containerCenter {
+.main {
+  .pageHeader {
+    margin: 50px;
+
+    .container {
+      display: flex;
+      justify-content: center;
+      padding: 0 80px;
+
       .containerHeading {
         font-size: 24px;
       }
     }
   }
-}
 
-.Heading {
-  @include fontBold;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  .Heading {
+    @include fontBold;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
 }

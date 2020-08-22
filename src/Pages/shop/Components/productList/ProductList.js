@@ -13,7 +13,7 @@ class ProductList extends Component {
 
   render() {
     return (
-      <div className="productList aspectRatio aspectRatio--withFallback">
+      <div className="ProductList aspectRatio aspectRatio--withFallback">
         {this.props.product.map((product) => (
           <Product
             key={product.frontSrc}
