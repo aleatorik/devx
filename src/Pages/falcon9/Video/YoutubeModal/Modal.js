@@ -9,8 +9,8 @@ class Modal extends Component {
 
   componentDidMount() {
     const body = document.getElementsByTagName("body")[0];
-    const modal = document.getElementsByClassName("Video")[0].offsetTop;
-    window.scrollTo({ top: modal });
+    const videoLocation = document.getElementsByClassName("Video")[0].offsetTop;
+    window.scrollTo({ top: videoLocation });
     const originBodyClassName = body.className;
     body.className = `${originBodyClassName} scrollLock`;
     this.setState({ originBodyClassName: originBodyClassName });
