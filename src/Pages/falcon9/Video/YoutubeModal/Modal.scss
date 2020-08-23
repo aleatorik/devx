@@ -1,38 +1,10 @@
 @import "../../../../Styles/common.scss";
 
-.Modal {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: $backgroundColor;
-  width: 100vw;
-  height: 100vh;
-  z-index: 2;
-  display: flex;
-  @include center;
-
-  iframe {
-    width: 80%;
-    height: 80%;
-  }
+.scrollLock {
+  overflow: hidden;
 }
 
-button {
-  position: absolute;
-  top: 33px;
-  right: 39px;
-  svg {
-    width: 35px;
-    height: 35px;
-    line {
-      stroke-width: 4px;
-      stroke: #fff;
-    }
-  }
-}
-
-@keyframes downup {
+@keyframes bottomToTop {
   from {
     transform: translate(-50%, -50%) translateY(100vh);
   }
@@ -41,7 +13,7 @@ button {
   }
 }
 
-@keyframes up {
+@keyframes toTop {
   from {
     transform: translate(-50%, -50%) translateY(0);
   }
@@ -50,10 +22,43 @@ button {
   }
 }
 
-.downToUp {
-  animation: downup 510ms ease-in-out;
+.appear {
+  animation: bottomToTop 510ms ease-in-out;
 }
 
-.goUp {
-  animation: up 510ms ease-in-out;
+.disappear {
+  animation: toTop 510ms ease-in-out;
+}
+
+.Modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 100vh;
+  @include center;
+  transform: translate(-50%, -50%);
+  background-color: $backgroundColor;
+  z-index: 2;
+
+  iframe {
+    width: 80%;
+    height: 80%;
+  }
+
+  .closeBtn {
+    position: absolute;
+    right: 10vh;
+    height: 80%;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .descriptionOfVideo {
+    position: absolute;
+    bottom: 5%;
+    @include fontBold;
+    font-size: 17px;
+    font-weight: 600;
+  }
 }
