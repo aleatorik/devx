@@ -1,0 +1,34 @@
+$main-height: 100vh;
+
+.Main{
+    .bgMain {
+        height: $main-height;
+        background: pink;
+    }
+    
+    .bgStarlink {
+        height: $main-height;
+        background: skyblue;
+    }
+    
+    .bgStarship {
+        height: $main-height;
+        background: thistle;
+    }
+    
+    .bgReturn {
+        height: $main-height;
+        background: palegoldenrod;
+    }
+    
+    .bgDragon {
+        width: 100%;
+        height: 70vh;
+        background: aqua;
+    }
+    
+    .bgNasa {
+        height: $main-height;
+        background: darkorange;
+    }
+}
