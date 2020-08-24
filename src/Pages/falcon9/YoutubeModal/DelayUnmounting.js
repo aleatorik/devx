@@ -3,15 +3,15 @@ import React, { Component } from "react";
 function delayUnmounting(Component) {
   return class extends React.Component {
     state = {
-      shouldRender: this.props.modalIsMount,
+      shouldRender: this.props.isModalRendered,
     };
 
     componentDidUpdate(prevProps) {
-      if (prevProps.modalIsMount && !this.props.modalIsMount) {
+      if (prevProps.isModalRendered && !this.props.isModalRendered) {
         setTimeout(() => {
           this.setState({ shouldRender: false });
         }, this.props.delayTime);
-      } else if (!prevProps.modalIsMount && this.props.modalIsMount) {
+      } else if (!prevProps.isModalRendered && this.props.isModalRendered) {
         this.setState({ shouldRender: true });
       }
     }

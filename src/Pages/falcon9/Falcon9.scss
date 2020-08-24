@@ -16,6 +16,10 @@
   color: $fontColor-white;
 }
 
+.bgColorBlack {
+  background-color: black;
+}
+
 .Falcon9 {
   @include fontRegular;
   color: $fontColor-white;
@@ -42,6 +46,24 @@
 
   .fadeinAnimation {
     animation: fadeIn 1.5s ease-in-out forwards;
+  }
+
+  @keyframes bottomToTop {
+    from {
+      transform: translateY(100vh);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes toTop {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-100vh);
+    }
   }
 
   .background {

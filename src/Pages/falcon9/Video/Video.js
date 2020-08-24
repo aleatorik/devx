@@ -1,33 +1,27 @@
 import React, { Component } from "react";
-import delayUnmounting from "./YoutubeModal/DelayUnmounting";
-import Modal from "./YoutubeModal/Modal";
 import PlayIconSvg from "./PlayIconSvg";
 import "./Video.scss";
 
 class Video extends Component {
-  state = {
-    modalIsMount: false,
-  };
-
-  changeModalMount = () => {
-    const { modalIsMount } = this.state;
-    this.setState({ modalIsMount: !modalIsMount });
-  };
-
-  DelayUnmountModal = delayUnmounting(Modal);
-
   render() {
-    const { modalIsMount } = this.state;
-    const { changeModalMount, DelayUnmountModal } = this;
+    const {
+      handleModal,
+      isModalRendered,
+      modalHaventRenderBefore,
+    } = this.props;
     return (
-      <section className="Video">
-        <DelayUnmountModal
-          delayTime={500}
-          modalIsMount={modalIsMount}
-          changeModalMount={changeModalMount}
-        />
+      <section
+        className={`Video ${
+          modalHaventRenderBefore
+            ? ""
+            : isModalRendered
+            ? "disappear"
+            : "appear"
+        }`}
+        //Modal이 한번도 렌더되지 않았을때는 애니메이션이 없다가 Modal이 최초 렌더된 시기부터 애니메이션을 적용시키기 위한 로직
+      >
         <div className="background">
-          <button onClick={changeModalMount}>
+          <button onClick={handleModal}>
             <PlayIconSvg />
           </button>
         </div>

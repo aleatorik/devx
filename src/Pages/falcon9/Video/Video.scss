@@ -5,6 +5,14 @@
   overflow: hidden;
   @include sectionStyle;
 
+  &.appear {
+    animation: bottomToTop 1010ms ease-in-out;
+  }
+
+  &.disappear {
+    animation: toTop 1010ms ease-in-out;
+  }
+
   .background {
     background-image: url("/images/falcon9/f9VideoThumbnail.jpg");
 
