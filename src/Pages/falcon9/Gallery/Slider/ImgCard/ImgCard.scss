@@ -1,0 +1,16 @@
+.ImgCard {
+  flex: 1 0 100%;
+  .imageWrapper {
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: calc(100vh - 100px);
+    }
+  }
+
+  .description {
+    height: 100px;
+    line-height: 100px;
+    font-weight: 200;
+  }
+}

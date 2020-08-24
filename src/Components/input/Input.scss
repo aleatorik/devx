@@ -1,0 +1,53 @@
+@import '../../Styles/common.scss';
+
+.InputContainer {
+    position: relative;
+    width: 400px;
+    min-height: 47px;
+    border: 1px solid $borderColor;
+    background: white;
+    @include fontBold;
+    font-size: 15px;
+    padding: 12px 14px;
+    
+    .inputFont {
+        position: absolute;
+        top: -18px;
+        padding: 0 3px;
+        background: white;
+        transition: all 0.5s;
+        font-size: 12px;
+        pointer-events: none;
+    }
+
+    .placeholderGoUp {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .placeholderGoDown {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    .textInput {
+        width: 100%;
+        border: none;
+        outline: none;
+    }
+
+    .btnForgot {
+        position: absolute;
+        top: 15px;
+        right: 14px;
+        padding: 0;
+        font-size: 13px;
+        border: none;
+        background: none;
+        outline: none;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
