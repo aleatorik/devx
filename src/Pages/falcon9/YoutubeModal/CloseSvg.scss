@@ -1,0 +1,12 @@
+.CloseSvg {
+  width: 35px;
+  height: 35px;
+  transition: transform 300ms ease-in-out;
+  &:hover {
+    transform: scale(1.2);
+  }
+  line {
+    stroke-width: 4px;
+    stroke: #fff;
+  }
+}
