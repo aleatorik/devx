@@ -6,9 +6,7 @@ class Button extends Component {
         const {text, handleOnclick} = this.props;
 
         return (
-            <div className="ButtonContainer">
-                <button onClick={handleOnclick}>{text}</button>
-            </div>
+            <button onClick={handleOnclick}>{text}</button>
         );
     }
 }
