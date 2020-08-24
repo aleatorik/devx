@@ -1,0 +1,28 @@
+@import '../../Styles/common.scss';
+
+.RegisterContainer {
+    height: 100vh;
+    @include center;
+    
+    .registerForm {
+        @include center;
+        @include flexCenterAndSetDirection($direction: column);
+        @include fontBold;
+        font-size: 15px;
+    
+        div {
+            margin: 8px 0;
+    
+            &:nth-child(2) {
+                color: #888;
+                margin-bottom: 20px;
+            }
+        }
+    
+        .registerText {
+            font-size: 25px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+    }
+}
