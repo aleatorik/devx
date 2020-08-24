@@ -166,6 +166,7 @@ h1 {
 
 button {
   color: #fff;
+  background-color: #fff;
 }
 
 input {
@@ -176,9 +177,9 @@ input {
   margin: 0;
 }
 
-.Heading {
+.heading {
   font-family: "DIN Neuzeit Grotesk", sans-serif;
-
+  font-weight: 700;
   font-style: normal;
   color: #000;
   transition: color 0.2s ease-in-out;

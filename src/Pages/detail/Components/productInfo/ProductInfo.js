@@ -10,10 +10,10 @@ class ProductInfo extends Component {
           <div className="product__info">
             <div className="container">
               <div className="productMeta">
-                <h1 className="productMeta__title Heading">
+                <h1 className="productMeta__title heading">
                   Men's Demo 2 Mission T-Shirt
                 </h1>
-                <div className="productMeta__priceList">
+                <div className="productMeta__priceList heading">
                   <div className="productMeta__price price">
                     <span className="money">$30.00</span>
                   </div>
@@ -131,7 +131,7 @@ class ProductInfo extends Component {
               </form>
               <div className="product__quickNav">
                 <div className="product__quickNavWrapper">
-                  <Link className="Heading link--secondary">
+                  <Link className="heading link--secondary">
                     More information
                   </Link>
                   <svg className="icon icon--selet-arrow-right">
