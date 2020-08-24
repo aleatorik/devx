@@ -1,0 +1,77 @@
+@import '../../../Styles/common.scss';
+@mixin txtDefaultPosition {
+    transform: translateY(50px);
+}
+
+.MainBG {
+    position: relative;
+    @include fontRegular;
+    color: white;
+    @include bgImgDefualtSet;
+
+    .txtContainer {
+        position: absolute;
+        bottom: 15%;
+        max-width: 420px;
+
+        .title {
+            height: 32px;
+            font-size: 20px;
+            margin-bottom: 10px;
+            @include txtDefaultPosition;
+        }
+
+        .info {
+            display: flex;
+            flex-direction: column;
+            font: 100px D-DIN-Bold,Arial,Verdana,sans-serif;
+            font-size: 48px;
+            font-weight: bold;
+            letter-spacing: -3px;
+            line-height: percentage($number: 1);
+            margin-bottom: 35px;
+            @include txtDefaultPosition;
+        }
+
+        .detail {
+            font-size: 16px;
+            @include txtDefaultPosition;
+        }
+
+        .width-short {
+            max-width: 370px;
+        }
+
+        .linkBox-container {
+            margin-top: 45px;
+            @include txtDefaultPosition;
+        }
+
+        .txtShow {
+            transform: translateY(0);
+            transition: transform 1s linear;
+        }
+    }
+
+    .position-left {
+        left: 50px;
+    }
+
+    .position-right {
+        right: 50px;
+    }
+
+    .arrow-container {
+        position: absolute;
+        width: 100%;    // svg 때문인지 div인데도 width가 100%가 아님
+        bottom: 5%;
+    }
+}
+
+.height-long {
+    height: 100vh;
+}
+
+.height-short {
+    height: 70vh;
+}

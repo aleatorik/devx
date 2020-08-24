@@ -1,0 +1,58 @@
+{
+    "mainList": [
+        {
+          "backgroundImg": "https://www.spacex.com/static/images/backgrounds/splashdown_1.webp",
+          "title": "MISSION COMPLETE",
+          "info": ["CREW DRAGON", "RETURNS FROM", "SPACE STATION"],
+          "txtLinkBox": "REPLAY",
+          "detail": "",
+          "position": true,
+          "height": true
+        },
+        {
+          "backgroundImg": "https://www.spacex.com/static/images/backgrounds/starlink10.webp",
+          "title": "RECENT LAUNCH",
+          "info": ["STARLINK MISSION"],
+          "txtLinkBox": "REPLAY",
+          "detail": "",
+          "position": false,
+          "height": true
+        },
+        {
+          "backgroundImg": "https://www.spacex.com/static/images/backgrounds/starshipliftoff_desktop1.webp",
+          "title": "",
+          "info": ["STARSHIP TAKES", "FLIGHT"],
+          "txtLinkBox": "REPLAY",
+          "detail": "",
+          "position": true,
+          "height": true
+        },
+        {
+          "backgroundImg": "https://www.spacex.com/static/images/backgrounds/home_demo2.webp",
+          "title": "",
+          "info": ["RETURNING", "HUMAN", "SPACEFLIGHT TO", "THE UNITED", "STATES"],
+          "txtLinkBox": "LEARN MORE",
+          "detail": "",
+          "position": true,
+          "height": true
+        },
+        {
+          "backgroundImg": "https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F140DB23A5152C1FE11",
+          "title": "",
+          "info": ["CREW DRAGON", "DOCKING", "SIMULATOR"],
+          "txtLinkBox": "TRY IT",
+          "detail": "Crew Dragon is designed to autonomously dock and undock with the International Space Station. However, the crew can take manual control of the spacecraft if necessary.",
+          "position": true,
+          "height": false
+        },
+        {
+          "backgroundImg": "https://www.spacex.com/static/images/backgrounds/home_moon.webp",
+          "title": "05/01/20",
+          "info": ["NASA SELECTS", "LUNAR OPTIMIZED", "STARSHIP"],
+          "txtLinkBox": "LEARN MORE",
+          "detail": "NASA selected SpaceX to develop a lunar optimized Starship to transport crew between lunar orbit and the surface of the Moon as part of NASA’s Artemis program.",
+          "position": false,
+          "height": true
+        }
+      ]
+}
