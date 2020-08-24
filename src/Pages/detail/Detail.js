@@ -4,6 +4,7 @@ import "./Detail.scss";
 import ProductSlide from "../detail/Components/productSlide/ProductSlide";
 import ProductInfo from "../detail/Components/productInfo/ProductInfo";
 import ProductAside from "../detail/Components/productAside/ProductAside";
+import Footer from "../../Components/footer/Footer";
 
 class Detail extends Component {
   render() {
@@ -28,6 +29,7 @@ class Detail extends Component {
           <ProductInfo />
           <ProductAside />
         </div>
+        <Footer />
       </main>
     );
   }
