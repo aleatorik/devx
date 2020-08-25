@@ -1,0 +1,29 @@
+@import "../../../../../../Styles/common.scss";
+
+.TableSelectBtnHline {
+  width: 1px;
+  height: 16px;
+  margin: 0 10px;
+  background-color: $fontColor-lightGray;
+  &:last-of-type {
+    display: none;
+  }
+}
+.TabSelectBtn {
+  @include center;
+  height: 20px;
+  padding-bottom: 2px;
+  @include fontRegular;
+  font-size: 16px;
+  color: $fontColor-white;
+
+  &:focus {
+    border-bottom: 1px solid $fontColor-white;
+    margin-bottom: -1px;
+  }
+
+  &.unactiveBtn {
+    color: $fontColor-lightGray;
+    opacity: 0.8;
+  }
+}

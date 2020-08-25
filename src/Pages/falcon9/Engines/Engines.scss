@@ -25,18 +25,6 @@
       max-width: 520px;
       text-align: left;
 
-      .category {
-        margin-bottom: 10px;
-        font-size: 20px;
-        font-weight: 400;
-      }
-
-      h1 {
-        @include fontBold;
-        font-size: 46px;
-        font-weight: 600;
-      }
-
       .tabSelectArea {
         @include flexCenterAndSetJustify(flex-start);
         margin: 50px 0 30px;

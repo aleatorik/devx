@@ -1,0 +1,21 @@
+@import "../../Falcon9.scss";
+
+.CardContents {
+  @include articleStyle;
+  .cardContentsInnerWrapper {
+    width: 50%;
+    max-width: 520px;
+    position: absolute;
+    top: 50%;
+    left: 50px;
+    transform: translateY(-50%);
+    text-align: left;
+  }
+  .description {
+    margin: 20px 0 15px;
+    @include fontRegular;
+    font-size: 17px;
+    font-weight: 100;
+    line-height: 1.75;
+  }
+}

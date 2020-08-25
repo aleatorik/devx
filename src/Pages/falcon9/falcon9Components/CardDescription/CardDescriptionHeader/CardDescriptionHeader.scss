@@ -1,0 +1,19 @@
+@import "../../../../../Styles/common.scss";
+
+.CardDescriptionHeader {
+  max-width: 520px;
+  text-align: left;
+
+  .specHeaderCategory {
+    @include fontRegular;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 200;
+  }
+
+  .specHeaderTitle {
+    @include fontBold;
+    font-size: 46px;
+    font-weight: 600;
+  }
+}
