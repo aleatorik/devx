@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Nav from "../../Components/nav/Nav";
 import Featuer from "./feature/Featuer";
 import Stats from "./stats/Stats";
 import Video from "./Video/Video";
@@ -56,6 +57,7 @@ class Falcon9 extends Component {
     const { handleModal, recordScrollPosition } = this;
     return (
       <main className="Falcon9">
+        <Nav scrollPosition={nowScrollPosition} />
         <Featuer />
         <Stats />
         <Video
