@@ -124,7 +124,7 @@ class ProductInfo extends Component {
                 </div>
                 <button
                   type="submit"
-                  className="productForm__addToCart Button button-full button-primary"
+                  className="productForm__addToCart button button-full button-primary"
                 >
                   Add to cart
                 </button>

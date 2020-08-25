@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import Nav from "../../Components/nav/Nav";
 import ProductSlide from "../detail/Components/productSlide/ProductSlide";
 import ProductInfo from "../detail/Components/productInfo/ProductInfo";
+import ColorSelectModal from "../detail/colorModal/ColorSelectModal";
+import SizeSelectModal from "../detail/sizeModal/SizeSelectModal";
+import ImgViewModal from "./imgModal/ImgViewModal";
 import ProductAside from "../detail/Components/productAside/ProductAside";
 import Footer from "../../Components/footer/Footer";
 import "./Detail.scss";
@@ -31,6 +34,9 @@ class Detail extends Component {
             </div>
             <ProductInfo />
             <ProductAside />
+            <ColorSelectModal />
+            <SizeSelectModal />
+            <ImgViewModal />
           </div>
           <Footer />
         </main>
