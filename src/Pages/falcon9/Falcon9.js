@@ -9,6 +9,8 @@ import delayUnmounting from "./YoutubeModal/DelayUnmounting";
 import Modal from "./YoutubeModal/YoutubeModal";
 import "./Falcon9.scss";
 
+const DelayModal = delayUnmounting(Modal);
+
 class Falcon9 extends Component {
   state = {
     orgBodyClassName: "",
@@ -20,7 +22,7 @@ class Falcon9 extends Component {
   componentDidMount() {
     const body = document.getElementsByTagName("body")[0];
     const orgBodyClassName = body.className;
-    this.setState({ orgBodyClassName: orgBodyClassName });
+    this.setState({ orgBodyClassName });
     body.className = `${orgBodyClassName} bgColorBlack`;
     // Mac에서 페이지 위 아래로 스크롤 할 경우 하얀색이 나오는 버그를 대응하기 위해서 Body에 backgroundColor:black을 적용시키기 위함
     window.addEventListener("scroll", this.recordScrollPosition);
@@ -45,15 +47,13 @@ class Falcon9 extends Component {
     });
   };
 
-  DelayModal = delayUnmounting(Modal);
-
   render() {
     const {
       nowScrollPosition,
       isModalRendered,
       modalHaventRenderBefore,
     } = this.state;
-    const { handleModal, recordScrollPosition, DelayModal } = this;
+    const { handleModal, recordScrollPosition } = this;
     return (
       <main className="Falcon9">
         <Featuer />
