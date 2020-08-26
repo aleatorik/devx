@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import Input from '../../Components/input/Input';
 import Button from '../../Components/button/Button';
-import './Account.scss';
 import { Link } from 'react-router-dom';
 import Nav from '../../Components/nav/Nav';
 import Footer from '../../Components/footer/Footer';
+import { API_LOGIN } from '../../config';
+import './Account.scss';
 
 class Account extends Component {
     state = {
@@ -13,8 +14,10 @@ class Account extends Component {
     };
 
     handleOnclick = (e) => {
+        const api_login = API_LOGIN;
+
         e.preventDefault();
-        fetch('http://10.58.5.213:8000/sign/in', {
+        fetch(`${api_login}`, {
             method: 'POST',
             body: JSON.stringify({
                 email: this.state.email,
@@ -30,7 +33,7 @@ class Account extends Component {
         this.setState({[e.target.name]: e.target.value});
     }
 
-    render() {console.log(this.state)
+    render() {
         return (
             <div className="AccountContainer">
                 <form className="accountForm">
@@ -43,7 +46,9 @@ class Account extends Component {
                     <Button handleOnclick={this.handleOnclick} text="LOGIN" />
                     <div className="accountBottom">
                         <span>Don't have an account? </span>
-                        <Link to="register"><span className="goToRegister">Create one</span></Link>
+                        <Link to="register">
+                            <span className="goToRegister">Create one</span>
+                        </Link>
                     </div>
                 </form>
             </div>
