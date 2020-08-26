@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Input from '../../Components/input/Input';
 import Button from '../../Components/button/Button';
+import { API_REGISTER } from '../../config';
 import './Register.scss';
 
 class Account extends Component {
@@ -12,8 +13,10 @@ class Account extends Component {
     }
 
     handleOnclick = (e) => {
+        const api_register = API_REGISTER;
+
         e.preventDefault();
-        fetch('http://10.58.5.213:8000/sign/in', {
+        fetch(`${api_register}`, {
             method: 'POST',
             body: JSON.stringify({
                 firstname: this.state.firstname,
