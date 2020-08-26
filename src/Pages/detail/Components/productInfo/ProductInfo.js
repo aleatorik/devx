@@ -52,22 +52,20 @@ class ProductInfo extends Component {
                       Color: Black
                       <span className="productForm__selectedValue"></span>
                     </span>
-                    {
-                      <svg
-                        className="icon icon--selected-arrow"
-                        role="presentation"
-                        viewBox="0 0 19 12"
-                      >
-                        <polyline
-                          fill="none"
-                          stroke="currentColor"
-                          points="17 2 9.5 10 2 2"
-                          fill-rule="evenodd"
-                          stroke-width="2"
-                          stroke-linecap="square"
-                        ></polyline>
-                      </svg>
-                    }
+                    <svg
+                      className="icon icon--selected-arrow"
+                      role="presentation"
+                      viewBox="0 0 19 12"
+                    >
+                      <polyline
+                        fill="none"
+                        stroke="currentColor"
+                        points="17 2 9.5 10 2 2"
+                        fill-rule="evenodd"
+                        stroke-width="2"
+                        stroke-linecap="square"
+                      ></polyline>
+                    </svg>
                   </button>
                 </div>
                 <div className="productForm__option">
@@ -76,42 +74,38 @@ class ProductInfo extends Component {
                       Size: S
                       <span className="productForm__selectedValue"></span>
                     </span>
-                    {
-                      <svg
-                        className="icon icon--selected-arrow"
-                        role="presentation"
-                        viewBox="0 0 19 12"
-                      >
-                        <polyline
-                          fill="none"
-                          stroke="currentColor"
-                          points="17 2 9.5 10 2 2"
-                          fill-rule="evenodd"
-                          stroke-width="2"
-                          stroke-linecap="square"
-                        ></polyline>
-                      </svg>
-                    }
+                    <svg
+                      className="icon icon--selected-arrow"
+                      role="presentation"
+                      viewBox="0 0 19 12"
+                    >
+                      <polyline
+                        fill="none"
+                        stroke="currentColor"
+                        points="17 2 9.5 10 2 2"
+                        fill-rule="evenodd"
+                        stroke-width="2"
+                        stroke-linecap="square"
+                      ></polyline>
+                    </svg>
                   </button>
                 </div>
                 <div className="productForm__quantitySelector">
                   <div className="quantitySelector quantitySelector__large">
                     <span className="quantitySelector__btn decrease-quantity">
-                      {
-                        <svg
-                          className="Icon Icon--minus"
-                          role="presentation"
-                          viewBox="0 0 16 2"
-                        >
-                          <path
-                            d="M1,1 L15,1"
-                            stroke="currentColor"
-                            fill="none"
-                            fill-rule="evenodd"
-                            stroke-linecap="square"
-                          ></path>
-                        </svg>
-                      }
+                      <svg
+                        className="Icon Icon--minus"
+                        role="presentation"
+                        viewBox="0 0 16 2"
+                      >
+                        <path
+                          d="M1,1 L15,1"
+                          stroke="currentColor"
+                          fill="none"
+                          fill-rule="evenodd"
+                          stroke-linecap="square"
+                        ></path>
+                      </svg>
                     </span>
                     <input
                       type="text"
@@ -119,23 +113,21 @@ class ProductInfo extends Component {
                       className="quantitySelector__currentQuantity"
                     />
                     <span className="quantitySelector__btn increase-quantity">
-                      {
-                        <svg
-                          className="Icon Icon--plus"
-                          role="presentation"
-                          viewBox="0 0 16 16"
+                      <svg
+                        className="Icon Icon--plus"
+                        role="presentation"
+                        viewBox="0 0 16 16"
+                      >
+                        <g
+                          stroke="currentColor"
+                          fill="none"
+                          fill-rule="evenodd"
+                          stroke-linecap="square"
                         >
-                          <g
-                            stroke="currentColor"
-                            fill="none"
-                            fill-rule="evenodd"
-                            stroke-linecap="square"
-                          >
-                            <path d="M8,1 L8,15"></path>
-                            <path d="M1,8 L15,8"></path>
-                          </g>
-                        </svg>
-                      }
+                          <path d="M8,1 L8,15"></path>
+                          <path d="M1,8 L15,8"></path>
+                        </g>
+                      </svg>
                     </span>
                   </div>
                 </div>

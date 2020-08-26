@@ -5,7 +5,7 @@
 
   .product {
     position: relative;
-    margin: 100px auto 50px auto;
+    margin: 0 auto;
     max-width: 1330px;
     margin-bottom: 80px;
 
@@ -53,10 +53,10 @@
             .navDot.is-selected {
               border-color: #000;
               background: #000;
-            }
 
-            .navDot:not(:last-child) {
-              margin-bottom: 12px;
+              &.navDot:not(:last-child) {
+                margin-bottom: 12px;
+              }
             }
           }
         }

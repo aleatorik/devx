@@ -2,13 +2,10 @@
 @import "../../Detail.scss";
 
 .productSlide {
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   padding-top: 50px;
 
   .product__slideItem {
-    // transition: opacity 0.3s ease;
-    // opacity: 0;
     position: relative;
     top: 0;
     left: 0;
@@ -16,7 +13,7 @@
     height: 730px;
     margin-bottom: 30px;
 
-    .img__case1 {
+    .img__case {
       position: absolute;
       top: 0;
       left: 0;
@@ -24,10 +21,9 @@
       height: 100%;
       transform: translateY(0);
       animation: fadeIn 700ms ease-in-out;
-      // opacity: 1;
     }
 
-    .img__case2 {
+    .img__case:last-child {
       position: absolute;
       top: 0;
       left: 0;
@@ -38,7 +34,6 @@
       vertical-align: top;
       transform: translateY(0);
       animation: fadeIn 700ms ease-in-out;
-      // opacity: 1;
     }
   }
 }

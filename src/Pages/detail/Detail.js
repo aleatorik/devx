@@ -16,7 +16,7 @@ class Detail extends Component {
           <div className="productLarge product">
             <div className="product__wrapper">
               <div className="product__display--withDots">
-                <span className="anchor"></span>
+                <span className="anchor" />
                 <div className="product__slideNav">
                   <div className="product__slideNav--scroller">
                     <Link
