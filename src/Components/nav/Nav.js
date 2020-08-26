@@ -12,11 +12,19 @@ class Nav extends Component {
     backgroundShow: false
   };
 
-  componentDidUpdate(prevProps, prevState){
-    const {scrollPosition} = this.props;
-    const {scroll ,scrollDirection, navHide} = this.state;
+  componentDidMount(){
+    const {alwaysBgOn} = this.props;
     
-    if(prevState.scroll !== scrollPosition){
+    this.setState({
+      backgroundShow: alwaysBgOn ? true : false
+    });
+  }
+
+  componentDidUpdate(prevProps, prevState){
+    const {scrollPosition, alwaysNavOn} = this.props;
+    const {scroll, scrollDirection, navHide} = this.state;
+    
+    if(prevState.scroll !== scrollPosition && !alwaysNavOn){
       this.setState({scroll: scrollPosition,
         scrollDirection: prevState.scroll < scrollPosition,
         backgroundShow: scroll >= window.innerHeight
