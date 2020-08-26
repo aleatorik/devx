@@ -60,7 +60,7 @@ class ColorSelectModal extends Component {
           <div className="colorSelectModal__choiceList">
             <div className="colorSelectModal__choice is-selected">
               <div className="colorSelectModal__choiceColor">
-                <span className="colorSelectModal__colorSwatch"></span>
+                <span className="colorSelectModal__colorSwatch" />
                 <span className="colorSelectModal__choiceValue">Black</span>
               </div>
               <div className="colorSelectModal__choicePrice">
