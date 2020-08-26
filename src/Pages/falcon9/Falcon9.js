@@ -6,7 +6,7 @@ import Video from "./Video/Video";
 import Engines from "./Engines/Engines";
 import Footer from "../../Components/footer/Footer";
 import Gallery from "./Gallery/Gallery";
-import Card from "./falcon9Components/CardDescription/Card";
+import ParallaxSlider from "./ParallaxSlide/ParallaxSlide";
 import delayUnmounting from "./YoutubeModal/DelayUnmounting";
 import Modal from "./YoutubeModal/YoutubeModal";
 import "./Falcon9.scss";
@@ -61,6 +61,7 @@ class Falcon9 extends Component {
         <Nav scrollPosition={nowScrollPosition} />
         <Featuer />
         <Stats />
+        <ParallaxSlider nowScrollPosition={nowScrollPosition} />
         <Video
           handleModal={handleModal}
           modalHaventRenderBefore={modalHaventRenderBefore}
@@ -68,7 +69,6 @@ class Falcon9 extends Component {
         />
         <Engines />
         <Gallery />
-        <Card />
         <Footer />
         <DelayModal
           delayTime={1000}

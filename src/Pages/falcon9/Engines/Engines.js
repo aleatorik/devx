@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import CardDescriptionHeader from "../falcon9Components/CardDescription/CardDescriptionHeader/CardDescriptionHeader";
+import CardContentsHeader from "../falcon9Components/SlideWrapper/Card/CardContents/CardContentsHeader/CardContentsHeader";
 import "./Engines.scss";
 
 class Engines extends Component {
@@ -21,9 +21,7 @@ class Engines extends Component {
         />
         <article className="fadeinAnimation">
           <div className="enginesContentsTab">
-            <CardDescriptionHeader category={"Engines"} title={"MERLIN"} />
-            {/* <p className="category">ENGINES</p>
-            <h1>MERLIN</h1> */}
+            <CardContentsHeader category={"Engines"} title={"MERLIN"} />
             <div className="tabSelectArea">
               <button
                 className={activeTab === "seaLevel" ? "" : "unactive"}

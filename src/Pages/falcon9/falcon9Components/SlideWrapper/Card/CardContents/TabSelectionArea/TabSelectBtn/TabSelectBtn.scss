@@ -1,4 +1,5 @@
-@import "../../../../../../Styles/common.scss";
+@import "../../../../../../../../Styles/common.scss";
+@import "../../../../../../../falcon9/Falcon9.scss";
 
 .TableSelectBtnHline {
   width: 1px;
@@ -9,6 +10,7 @@
     display: none;
   }
 }
+
 .TabSelectBtn {
   @include center;
   height: 20px;

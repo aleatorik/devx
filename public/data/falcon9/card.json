@@ -1,0 +1,195 @@
+{
+  "cardInformation": [
+    {
+      "backgroundImgUrl": ["/images/falcon9/Parallax/falcon9Overview.webp"],
+      "videoUrl": "",
+      "cardContents": {
+        "header": {},
+        "tabSelectionArea": [],
+        "description": [
+          "Falcon 9 is a reusable, two-stage rocket designed and manufactured by SpaceX for the reliable and safe transport of people and payloads into Earth orbit and beyond. Falcon 9 is the world’s first orbital class reusable rocket. Reusability allows SpaceX to refly the most expensive parts of the rocket, which in turn drives down the cost of space access."
+        ],
+        "cardTable": []
+      }
+    },
+    {
+      "backgroundImgUrl": ["/images/falcon9/Parallax/falcon9Overview.webp"],
+      "videoUrl": "/images/falcon9/Parallax/F9Fairings_Render_Video.webm",
+      "cardContents": {
+        "header": {
+          "category": "FALCON 9",
+          "title": "OVERVIEW"
+        },
+        "tabSelectionArea": [],
+        "description": [],
+        "cardTable": [
+          [
+            {
+              "field": "HEIGHT",
+              "spec": "70m",
+              "specAnotherUnit": "229.6 ft"
+            },
+            {
+              "field": "DIAMETER",
+              "spec": "3.7 m",
+              "specAnotherUnit": "12 ft"
+            },
+            {
+              "field": "MASS",
+              "spec": "549,054 kg",
+              "specAnotherUnit": "1,207,920 lb"
+            },
+            {
+              "field": "PAYLOAD TO LEO",
+              "spec": "22,800 kg",
+              "specAnotherUnit": "50,265 lb"
+            },
+            {
+              "field": "PAYLOAD TO GTO",
+              "spec": "8,300 kg",
+              "specAnotherUnit": "18,300 lb"
+            },
+            {
+              "field": "PAYLOAD TO MARS",
+              "spec": "4,020kg",
+              "specAnotherUnit": "8,860 lb"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "backgroundImgUrl": [
+        "/images/falcon9/Parallax/firstStageOverview.webp",
+        "/images/falcon9/Parallax/firstStageEngines.webp",
+        "/images/falcon9/Parallax/firstStageLandingLegs.webp"
+      ],
+      "videoUrl": "",
+      "cardContents": {
+        "header": {
+          "category": "FALCON 9",
+          "title": "FIRST STAGE"
+        },
+        "tabSelectionArea": ["OVER VIEW", "ENGINES", "LANDING LEGS"],
+        "description": [
+          "Falcon 9’s first stage incorporates nine Merlin engines and aluminum-lithium alloy tanks containing liquid oxygen and rocket-grade kerosene (RP-1) propellant. Falcon 9 generates more than 1.7 million pounds of thrust at sea level.",
+          "The nine Merlin engines on the first stage are gradually throttled near the end of first-stage flight to limit launch vehicle acceleration as the rocket’s mass decreases with the burning of fuel. These engines are also used to reorient the first stage prior to reentry and to decelerate the vehicle for landing.",
+          "The Falcon 9 first stage is equipped with four landing legs made of state-of-the-art carbon fiber with aluminum honeycomb. Placed symmetrically around the base of the rocket, they are stowed at the base of the vehicle and deploy just prior to landing."
+        ],
+        "cardTable": [
+          [],
+          [
+            {
+              "field": "NUMBER OF ENGINES",
+              "spec": "9",
+              "specAnotherUnit": ""
+            },
+            {
+              "field": "THRUST AT SEA LEVEL",
+              "spec": "7,607 m",
+              "specAnotherUnit": "1,710,000 lbf"
+            },
+            {
+              "field": "THRUST IN VACUUM",
+              "spec": "8,227 kN",
+              "specAnotherUnit": "1,849,500 lbf"
+            }
+          ],
+          []
+        ]
+      }
+    },
+    {
+      "backgroundImgUrl": ["/images/falcon9/Parallax/secondStageOverview.webp"],
+      "videoUrl": "",
+      "cardContents": {
+        "header": {
+          "category": "FALCON 9",
+          "title": "SECOND STAGE"
+        },
+        "tabSelectionArea": [],
+        "description": [
+          "The second stage, powered by a single Merlin Vacuum Engine, delivers Falcon 9’s payload to the desired orbit. The second stage engine ignites a few seconds after stage separation, and can be restarted multiple times to place multiple payloads into different orbits."
+        ],
+        "cardTable": [
+          [
+            {
+              "field": "NUMBER OF ENGINES",
+              "spec": "1 vacuum",
+              "specAnotherUnit": ""
+            },
+            {
+              "field": "BURN TIME",
+              "spec": "397 sec",
+              "specAnotherUnit": ""
+            },
+            {
+              "field": "THRUST",
+              "spec": "981 kN",
+              "specAnotherUnit": "220,500 lbf"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "backgroundImgUrl": ["/images/falcon9/Parallax/interStageOverview.webp"],
+      "videoUrl": "",
+      "cardContents": {
+        "header": {
+          "category": "FALCON 9",
+          "title": "INTERSTAGE"
+        },
+        "tabSelectionArea": [],
+        "description": [
+          "The interstage is a composite structure that connects the first and second stages, and houses the pneumatic pushers that allow the first and second stage to separate during flight. Falcon 9 is equipped with four hypersonic grid fins positioned at the base of the interstage. They orient the rocket during reentry by moving the center of pressure."
+        ],
+        "cardTable": []
+      }
+    },
+    {
+      "backgroundImgUrl": [
+        "/images/falcon9/Parallax/payLoadFaring.webp",
+        "/images/falcon9/Parallax/payLoadDragon.webp"
+      ],
+      "videoUrl": "",
+      "cardContents": {
+        "header": {
+          "category": "FALCON 9",
+          "title": "PAYLOAD"
+        },
+        "tabSelectionArea": ["FARING", "DRAGON"],
+        "description": [
+          "Made of a carbon composite material, the fairing protects satellites on their way to orbit. The fairing is jettisoned approximately 3 minutes into flight, and SpaceX continues to recover fairings for reuse on future missions.",
+          "Dragon is capable of carrying up to 7 people and/or cargo in the spacecraft’s pressurized section. In addition, Dragon can carry cargo in the spacecraft’s unpressurized trunk, which can also accommodate secondary payloads."
+        ],
+        "cardTable": [
+          [
+            {
+              "field": "HEIGHT",
+              "spec": "13.1 m",
+              "specAnotherUnit": "43 ft"
+            },
+            {
+              "field": "DIAMETER",
+              "spec": "5.2 m",
+              "specAnotherUnit": "17.1 ft"
+            }
+          ],
+          [
+            {
+              "field": "HEIGHT",
+              "spec": "8.1 m",
+              "specAnotherUnit": "26.6 ft"
+            },
+            {
+              "field": "DIAMETER",
+              "spec": "3.7 m",
+              "specAnotherUnit": "12 ft"
+            }
+          ]
+        ]
+      }
+    }
+  ]
+}
