@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import ColorSelectModal from "../../colorModal/ColorSelectModal";
+import FooIcon from "../fooIcon/FooIcon";
 import "./ProductInfo.scss";
 
 class ProductInfo extends Component {
@@ -52,20 +53,7 @@ class ProductInfo extends Component {
                       Color: Black
                       <span className="productForm__selectedValue"></span>
                     </span>
-                    <svg
-                      className="icon icon--selected-arrow"
-                      role="presentation"
-                      viewBox="0 0 19 12"
-                    >
-                      <polyline
-                        fill="none"
-                        stroke="currentColor"
-                        points="17 2 9.5 10 2 2"
-                        fill-rule="evenodd"
-                        stroke-width="2"
-                        stroke-linecap="square"
-                      ></polyline>
-                    </svg>
+                    <FooIcon />
                   </button>
                 </div>
                 <div className="productForm__option">
@@ -74,20 +62,7 @@ class ProductInfo extends Component {
                       Size: S
                       <span className="productForm__selectedValue"></span>
                     </span>
-                    <svg
-                      className="icon icon--selected-arrow"
-                      role="presentation"
-                      viewBox="0 0 19 12"
-                    >
-                      <polyline
-                        fill="none"
-                        stroke="currentColor"
-                        points="17 2 9.5 10 2 2"
-                        fill-rule="evenodd"
-                        stroke-width="2"
-                        stroke-linecap="square"
-                      ></polyline>
-                    </svg>
+                    <FooIcon />
                   </button>
                 </div>
                 <div className="productForm__quantitySelector">
