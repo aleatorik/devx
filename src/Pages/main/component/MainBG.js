@@ -13,31 +13,31 @@ class MainBG extends Component {
     componentDidMount(){
         const {index} = this.props;
 
-        if(index === 0){
+        this.setScrollPosition(index)
+    };
+
+    setScrollPosition = (idx) => {
+        this.setState({
+            scroll: parseInt(window.innerHeight * (0.7 + (idx - 1)))
+        });
+
+        if(idx === 0){
             setTimeout(() => {
                 this.setState({txtShow: true})
             }, 100);
         }
 
-        if(index === 4){
+        if(idx === 4){
             this.setState({
-                scroll: parseInt(window.innerHeight * 3.45)
+                scroll: parseInt(window.innerHeight * 3.25)
             });   
-             
-            return;
         }
 
-        if(index === 5){
+        if(idx === 5){
             this.setState({
-                scroll: parseInt(window.innerHeight * 4.45)
+                scroll: parseInt(window.innerHeight * 4.25)
             }); 
-
-            return;
         }
-
-        this.setState({
-            scroll: parseInt(window.innerHeight * (0.7 + (index - 1)))
-        });
     };
 
     componentDidUpdate(prevProps, prevState){
@@ -69,7 +69,7 @@ class MainBG extends Component {
                         <LinkBox txtLinkBox={txtLinkBox}/>
                     </div>
                 </div>
-                {index === 0 ? 
+                {!index ? 
                     <div className="arrow-container">
                         <DownArrow />
                     </div> 

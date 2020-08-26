@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Nav from '../../Components/nav/Nav';
 import Footer from "../../Components/footer/Footer";
 import MainBG from "./component/MainBG";
+import {API_MAIN} from '../../config'
 import './Main.scss';
 
 class Main extends Component {
@@ -13,7 +14,9 @@ class Main extends Component {
   };
 
   componentDidMount(){
-    fetch('http://localhost:3000/data/mainList.json')
+    const api_url = API_MAIN;
+    
+    fetch(`${api_url}/data/mainList.json`)
     .then(reponse => reponse.json())
     .then(json => this.setState({mainList: json.mainList}));
 
@@ -28,8 +31,7 @@ class Main extends Component {
     return (
       <div className='Main'>
         <Nav scrollPosition={scrollPosition}/>
-          {mainList.map((el, index) => <MainBG key={index} backgroundImg={el.backgroundImg} title={el.title} info={el.info} 
-          txtLinkBox={el.txtLinkBox} detail={el.detail} position={el.position} height={el.height} index={index} scrollPosition={scrollPosition}/>)}
+          {mainList.map((el, index) => <MainBG key={index} index={index} scrollPosition={scrollPosition} {...el}/>)}
         <Footer />
       </div>
     );
