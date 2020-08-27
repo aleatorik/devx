@@ -13,6 +13,10 @@
     height: 730px;
     margin-bottom: 30px;
 
+    &:hover {
+      cursor: -webkit-image-set(url(//cdn.shopify.com/s/files/1/0261/2615/5855/t/14/assets/cursor-zoom-in.svg?v=4667582213262480337) 1x, url(//cdn.shopify.com/s/files/1/0261/2615/5855/t/14/assets/cursor-zoom-in-2x.svg?v=8868055663999013071) 2x),zoom-in;
+    }
+
     .img__case {
       position: absolute;
       top: 0;
