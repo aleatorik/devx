@@ -2,19 +2,10 @@
   "cardInformation": [
     {
       "backgroundImgUrl": ["/images/falcon9/Parallax/falcon9Overview.webp"],
-      "videoUrl": "",
-      "cardContents": {
-        "header": {},
-        "tabSelectionArea": [],
-        "description": [
-          "Falcon 9 is a reusable, two-stage rocket designed and manufactured by SpaceX for the reliable and safe transport of people and payloads into Earth orbit and beyond. Falcon 9 is the world’s first orbital class reusable rocket. Reusability allows SpaceX to refly the most expensive parts of the rocket, which in turn drives down the cost of space access."
-        ],
-        "cardTable": []
-      }
-    },
-    {
-      "backgroundImgUrl": ["/images/falcon9/Parallax/falcon9Overview.webp"],
-      "videoUrl": "/images/falcon9/Parallax/F9Fairings_Render_Video.webm",
+      "videoUrl": [
+        "/images/falcon9/Parallax/WebsiteF9Fairings_Anim_Lines_Desktop.mp4",
+        "/images/falcon9/Parallax/F9Fairings_Render_Video.webm"
+      ],
       "cardContents": {
         "header": {
           "category": "FALCON 9",

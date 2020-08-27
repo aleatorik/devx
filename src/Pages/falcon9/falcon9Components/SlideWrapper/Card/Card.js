@@ -12,18 +12,15 @@ class Card extends Component {
   };
 
   render() {
-    const { introCardisInView } = this.props;
-    const {
-      backgroundImgUrl,
-      videoUrl,
-      cardContents,
-    } = this.props.cardInformation;
+    const { cardInformation, shouldParallaxAppear } = this.props;
+    console.log(this.props);
+    const { backgroundImgUrl, videoUrl, cardContents } = cardInformation;
     const { activeTab } = this.state;
     const { handleTab } = this;
     return (
       <div className="Card">
         <div
-          className={`background ${introCardisInView ? "stickyCard" : ""}`}
+          className={`background`}
           style={{
             backgroundImage: `url(${backgroundImgUrl[activeTab]})`,
           }}
@@ -33,13 +30,14 @@ class Card extends Component {
             autoPlay={true}
             muted
             loop
-            src={videoUrl}
+            src={shouldParallaxAppear ? videoUrl[1] : videoUrl[0]}
             className="backgroundVideo"
           />
         )}
         <CardContents
           cardContents={cardContents}
           activeTab={activeTab}
+          shouldParallaxAppear={shouldParallaxAppear}
           handleTab={handleTab}
         />
       </div>

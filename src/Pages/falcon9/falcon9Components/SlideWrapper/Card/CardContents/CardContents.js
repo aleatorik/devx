@@ -6,11 +6,21 @@ import "./CardContents.scss";
 
 class CardContents extends Component {
   render() {
-    const { cardContents, activeTab, handleTab } = this.props;
+    const {
+      cardContents,
+      activeTab,
+      handleTab,
+      shouldParallaxAppear,
+    } = this.props;
     const { header, tabSelectionArea, description, cardTable } = cardContents;
     const { category, title } = header;
     return (
-      <div className="CardContents">
+      <div
+        className="CardContents"
+        style={{
+          opacity: `${shouldParallaxAppear ? 1 : 0}`,
+        }}
+      >
         <div className="cardContentsInnerWrapper">
           {header.category && (
             <CardDescriptionHeader category={category} title={title} />

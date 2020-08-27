@@ -5,34 +5,94 @@ import "./ParallaxSlide.scss";
 
 class ParallaxSlide extends Component {
   state = {
-    introCardInformation: {},
-    introCardTopPosition: 0,
-    introCardisInView: false,
+    distanceToRevealTop: 0,
+    revealIsInView: false,
+    shouldParallaxAppear: false,
   };
+
   componentDidMount() {
-    fetch("/data/falcon9/card.json")
-      .then((res) => res.json())
-      .then((res) => {
-        this.setState({
-          introCardInformation: res.cardInformation[0],
-        });
-      });
+    window.addEventListener(
+      "scroll",
+      this.throttle(this.checkScrollEvent, 100)
+    );
   }
+
+  componentWillUnmount() {
+    window.removeEventListener(
+      "scroll",
+      this.throttle(this.checkScrollEvent, 100)
+    );
+  }
+
+  recordDistanceToRevealTop = () => {
+    const distanceToRevealTop = this.reveal.getBoundingClientRect().top;
+    this.setState({ distanceToRevealTop }, this.checkRevealIsInView);
+  };
+
+  checkRevealIsInView = () => {
+    const { distanceToRevealTop } = this.state;
+    if (distanceToRevealTop <= 0 && distanceToRevealTop > -1329) {
+      this.setState({ revealIsInView: true });
+    } else {
+      this.setState({ revealIsInView: false });
+    }
+  };
+
+  checkShouldParallaxAppear = () => {
+    const { distanceToRevealTop } = this.state;
+    if (distanceToRevealTop < -650) {
+      this.setState({ shouldParallaxAppear: true });
+    } else {
+      this.setState({ shouldParallaxAppear: false });
+    }
+  };
+
+  checkScrollEvent = async () => {
+    await this.recordDistanceToRevealTop();
+    this.checkRevealIsInView();
+    this.checkShouldParallaxAppear();
+  };
+
+  throttle = (func, delay) => {
+    let timer;
+    return function () {
+      if (!timer) {
+        timer = setTimeout(() => {
+          timer = false;
+          func(...arguments);
+        }, delay);
+      }
+    };
+  };
 
   render() {
     console.log(this.state);
-    const { introCardInformation } = this.state;
+    const {
+      distanceToRevealTop,
+      revealIsInView,
+      shouldParallaxAppear,
+    } = this.state;
     return (
       <section className="ParallaxSlide">
-        <article className="introCard">
-          {introCardInformation.backgroundImgUrl && (
-            <Card
-              introCardisInView={this.state.introCardisInView}
-              cardInformation={introCardInformation}
-            />
-          )}
+        <article className="revealCard" ref={(ref) => (this.reveal = ref)}>
+          <div className="revealCardContents">
+            <div className="cardContentsInnerWrapper">
+              <p className="description">
+                Falcon 9 is a reusable, two-stage rocket designed and
+                manufactured by SpaceX for the reliable and safe transport of
+                people and payloads into Earth orbit and beyond. Falcon 9 is the
+                world’s first orbital class reusable rocket. Reusability allows
+                SpaceX to refly the most expensive parts of the rocket, which in
+                turn drives down the cost of space access.
+              </p>
+            </div>
+          </div>
         </article>
-        <SlideWrapper />
+        <SlideWrapper
+          distanceToRevealTop={distanceToRevealTop}
+          revealIsInView={revealIsInView}
+          shouldParallaxAppear={shouldParallaxAppear}
+        />
       </section>
     );
   }
