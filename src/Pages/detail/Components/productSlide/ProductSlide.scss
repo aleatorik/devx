@@ -1,0 +1,43 @@
+@import "../../../../Styles/common.scss";
+@import "../../Detail.scss";
+
+.productSlide {
+  margin: 0 auto;
+  padding-top: 50px;
+
+  .product__slideItem {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 730px;
+    height: 730px;
+    margin-bottom: 30px;
+
+    &:hover {
+      cursor: -webkit-image-set(url(//cdn.shopify.com/s/files/1/0261/2615/5855/t/14/assets/cursor-zoom-in.svg?v=4667582213262480337) 1x, url(//cdn.shopify.com/s/files/1/0261/2615/5855/t/14/assets/cursor-zoom-in-2x.svg?v=8868055663999013071) 2x),zoom-in;
+    }
+
+    .img__case {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transform: translateY(0);
+      animation: fadeIn 700ms ease-in-out;
+    }
+
+    .img__case:last-child {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: 100%;
+      transition: transform 1.2s;
+      vertical-align: top;
+      transform: translateY(0);
+      animation: fadeIn 700ms ease-in-out;
+    }
+  }
+}
