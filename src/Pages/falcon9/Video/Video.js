@@ -3,11 +3,22 @@ import PlayIconSvg from "./PlayIconSvg";
 import "./Video.scss";
 
 class Video extends Component {
+  // state = {
+  //   isInView: false,
+  // };
+
+  // componentDidUpdate(prevProps) {
+  //   if (prevProps.isInView !== this.props.isInView) {
+  //     this.setState({ isInView: !this.state.isInView });
+  //   }
+  // }
+
   render() {
     const {
       handleModal,
       isModalRendered,
       modalHaventRenderBefore,
+      isEnterView,
     } = this.props;
     return (
       <section
@@ -26,7 +37,9 @@ class Video extends Component {
           </button>
         </div>
         <article>
-          <div className="description fadeinAnimation">
+          <div
+            className={`description ${isEnterView ? "fadeinAnimation" : ""}`}
+          >
             <span>VIDEO</span>
             <h1>FALCON 9 IN FLIGHT</h1>
           </div>

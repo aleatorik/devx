@@ -12,7 +12,7 @@ class Card extends Component {
   };
 
   render() {
-    const { cardInformation, shouldParallaxAppear } = this.props;
+    const { cardInformation, shouldParallaxAppear, isEnterView } = this.props;
     const { activeTab } = this.state;
     const { handleTab } = this;
     const { backgroundImgUrl, videoUrl, cardContents } = cardInformation;
@@ -37,6 +37,7 @@ class Card extends Component {
           cardContents={cardContents}
           activeTab={activeTab}
           shouldParallaxAppear={shouldParallaxAppear}
+          isEnterView={isEnterView}
           handleTab={handleTab}
         />
       </div>

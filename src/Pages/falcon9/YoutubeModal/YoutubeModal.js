@@ -18,6 +18,7 @@ class Modal extends Component {
   }
 
   render() {
+    console.log(this.props.nowScrollPosition);
     const { isModalRendered, handleModal } = this.props;
     return (
       <div

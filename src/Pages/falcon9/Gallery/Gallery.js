@@ -7,7 +7,7 @@ class Gallery extends Component {
   render() {
     return (
       <section className="Gallery">
-        <Slider cardData={CardData} />
+        <Slider isEnterView={this.props.isEnterView} cardData={CardData} />
       </section>
     );
   }

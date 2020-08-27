@@ -33,7 +33,9 @@ class CardContents extends Component {
             />
           )}
           {description.length > 0 && (
-            <p className="description">{description[activeTab]}</p>
+            <p className="description fadeinAnimation">
+              {description[activeTab]}
+            </p>
           )}
           {cardTable.length > 0 && (
             <CardContentsTable cardTable={cardTable[activeTab]} />

@@ -21,12 +21,15 @@ class ParallaxSlide extends Component {
 
   recordDistanceToRevealTop = () => {
     const distanceToRevealTop = this.reveal.getBoundingClientRect().top;
-    this.setState({ distanceToRevealTop }, this.checkRevealIsInView);
+    this.setState({ distanceToRevealTop });
   };
 
   checkShouldParallaxAppear = () => {
+    const screenY = window.innerHeight;
     const { distanceToRevealTop } = this.state;
-    if (distanceToRevealTop < -700) {
+    console.log(distanceToRevealTop);
+    console.log(screenY);
+    if (distanceToRevealTop < -screenY * (45 / 100)) {
       this.setState({ shouldParallaxAppear: true });
     } else {
       this.setState({ shouldParallaxAppear: false });
@@ -40,12 +43,17 @@ class ParallaxSlide extends Component {
 
   render() {
     const { shouldParallaxAppear } = this.state;
+    const { isEnterView } = this.props;
     return (
       <section className="ParallaxSlide">
         <article className="revealCard" ref={(ref) => (this.reveal = ref)}>
           <div className="revealCardContents">
-            <div className="cardContentsInnerWrapper">
-              <p className="description">
+            <div className={`cardContentsInnerWrapper`}>
+              <p
+                className={`description ${
+                  isEnterView ? "fadeinAnimation" : ""
+                }`}
+              >
                 Falcon 9 is a reusable, two-stage rocket designed and
                 manufactured by SpaceX for the reliable and safe transport of
                 people and payloads into Earth orbit and beyond. Falcon 9 is the
@@ -56,7 +64,10 @@ class ParallaxSlide extends Component {
             </div>
           </div>
         </article>
-        <SlideWrapper shouldParallaxAppear={shouldParallaxAppear} />
+        <SlideWrapper
+          isEnterView={isEnterView}
+          shouldParallaxAppear={shouldParallaxAppear}
+        />
       </section>
     );
   }

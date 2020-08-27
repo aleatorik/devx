@@ -8,6 +8,7 @@ class Engines extends Component {
   };
 
   render() {
+    const { isEnterView } = this.props;
     const { activeTab } = this.state;
     const { seaLevel, vacuum } = ENGINES__INFO;
     const tableData =
@@ -19,7 +20,7 @@ class Engines extends Component {
             activeTab === "seaLevel" ? "seaLevelbg" : "vacuumbg"
           }`}
         />
-        <article className="fadeinAnimation">
+        <article className={`${isEnterView ? "fadeinAnimation" : ""}`}>
           <div className="enginesContentsTab">
             <CardContentsHeader category={"Engines"} title={"MERLIN"} />
             <div className="tabSelectArea">
@@ -41,7 +42,7 @@ class Engines extends Component {
                 VACUUM
               </button>
             </div>
-            <p className="description">
+            <p className={`description`}>
               {activeTab === "seaLevel"
                 ? seaLevel.description
                 : vacuum.description}

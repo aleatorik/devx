@@ -9,6 +9,14 @@ class Stat extends Component {
     "reflown RocketsStat": 0,
   };
 
+  componentDidUpdate(prevProps) {
+    const { isEnterView } = this.props;
+    if (prevProps.isEnterView !== isEnterView && isEnterView) {
+      throttle(this.intervalIncrease(), 1000);
+    } else if (prevProps.isEnterView !== isEnterView && !isEnterView) {
+      this.resetValue();
+    }
+  }
   increaseStat = (stat, limit) => {
     if (this.state[stat] < limit) {
       this.setState({ [stat]: ++this.state[stat] });
@@ -23,6 +31,14 @@ class Stat extends Component {
         clearInterval(interval);
       }
     }, 10);
+  };
+
+  resetValue = () => {
+    this.setState({
+      "total LaunchesStat": 0,
+      "total LandingsStat": 0,
+      "reflown RocketsStat": 0,
+    });
   };
 
   render() {
