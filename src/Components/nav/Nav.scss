@@ -1,14 +1,21 @@
 @import "../../Styles/common.scss";
 
 .Header {
+<<<<<<< HEAD
   position: fixed;
   width: 100%;
+=======
+  background-color: #000;
+>>>>>>> master
   height: 100px;
   @include fontBold;
   font-size: 14px;
   font-weight: bold;
   color: $fontColor-white;
+<<<<<<< HEAD
   z-index: 1;
+=======
+>>>>>>> master
 
   .headerInnerContainer {
     position: relative;
@@ -29,10 +36,17 @@
       position: absolute;
       top: 38px;
       left: 285px;
+<<<<<<< HEAD
 
       .navLi {
         margin: 0 12px;
 
+=======
+
+      .navLi {
+        margin: 0 12px;
+
+>>>>>>> master
         &:hover {
           cursor: pointer;
         }
@@ -52,10 +66,13 @@
   transform: translateY(0);
   color: #fff;
   transition: all 0.3s cubic-bezier(1, 0, 0.8, 1);
+<<<<<<< HEAD
 }
 
 .HeaderBgHide {
   background: none;
+=======
+>>>>>>> master
 }
 
 .HeaderBgShow {
