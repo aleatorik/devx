@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import SpaceX from '../spaceX/SpaceX';
 import './Nav.scss';
+import { Link } from "react-router-dom";
 
-const NAV_LIST = ['FALCON 9', 'FALCON HEAVY', 'DRAGON', 'STARSHIP', 'SHOP', 'ACCOUNT'];
+const NAV_LIST = ['FALCON 9', 'FALCON HEAVY', 'DRAGON', 'STARSHIP', 'SHOP', 'ACCOUNT', 'REGISTER'];
 
 class Nav extends Component {
   state = {
@@ -49,7 +50,11 @@ class Nav extends Component {
             <SpaceX />
           </div>
           <ul className="navUl">
-            {NAV_LIST.map((el, index) => <li className="navLi" key={index}>{el}</li>)}
+            {NAV_LIST.map((el, index) => 
+              <Link to={`${el.replace(' ', '').toLowerCase()}`}>
+                <li className="navLi" key={index}>{el}</li>
+              </Link>
+            )}
           </ul>
         </div>
       </div>
