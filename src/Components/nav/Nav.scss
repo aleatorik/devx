@@ -1,14 +1,12 @@
 @import "../../Styles/common.scss";
 
 .Header {
-  position: fixed;
-  width: 100%;
+  background-color: #000;
   height: 100px;
   @include fontBold;
   font-size: 14px;
   font-weight: bold;
   color: $fontColor-white;
-  z-index: 1;
 
   .headerInnerContainer {
     position: relative;
@@ -52,10 +50,6 @@
   transform: translateY(0);
   color: #fff;
   transition: all 0.3s cubic-bezier(1, 0, 0.8, 1);
-}
-
-.HeaderBgHide {
-  background: none;
 }
 
 .HeaderBgShow {
