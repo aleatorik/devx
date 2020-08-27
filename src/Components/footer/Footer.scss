@@ -1,35 +1,35 @@
-@import '../../Styles/common.scss';
+@import "../../Styles/common.scss";
 
 .Footer {
-    height: 100px;
-    @include center;
-    @include fontRegular;
-    font-size: 11px;
-    color: $fontColor-white;
-    background: $backgroundColor;
+  height: 100px;
+  @include center;
+  @include fontRegular;
+  font-size: 11px;
+  color: $fontColor-white;
+  background: $backgroundColor;
 
-    span {
-        margin: 0 20px;
-        color: $fontColor-lightGray;
-    }
+  span {
+    margin: 0 20px;
+    color: $fontColor-lightGray;
+  }
 }
 
 .footerUl {
-    display: flex;
-    font-weight: bold;
+  display: flex;
+  font-weight: bold;
 
-    li {
-        margin: 0 20px;
-        
-        a {
-            color: $fontColor-white;
+  li {
+    margin: 0 20px;
 
-            &:hover {
-                color: $fontColor-lightGray;
-            }
+    a {
+      color: $fontColor-white;
 
-            color: $fontColor-white;
-            transition: color 0.5s;
-        }
+      &:hover {
+        color: $fontColor-lightGray;
+      }
+
+      color: $fontColor-white;
+      transition: color 0.5s;
     }
-} 
+  }
+}
