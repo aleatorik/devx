@@ -1,0 +1,35 @@
+@import '../../../Styles/common.scss';
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+    25% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(10px);
+    }
+    75% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+}
+
+.arrow-center {
+    @include center;
+
+    svg {
+        width: fit-content;
+        fill: none;
+        animation: fadeInOut 3s;
+        animation-iteration-count: infinite;
+    }
+}

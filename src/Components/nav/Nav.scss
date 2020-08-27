@@ -1,6 +1,7 @@
-@import '../../Styles/common.scss';
+@import "../../Styles/common.scss";
 
 .Header {
+<<<<<<< HEAD
     position: fixed;
     top: 0;
     width: 100%;
@@ -39,27 +40,59 @@
                     cursor: pointer;
                 }
             }
-        }
+=======
+  background-color: #000;
+  height: 100px;
+  @include fontBold;
+  font-size: 14px;
+  font-weight: bold;
+  color: $fontColor-white;
+
+  .headerInnerContainer {
+    position: relative;
+    max-width: 1400px;
+    height: 100%;
+    margin: 0 auto;
+
+    .spaceXIcon {
+      position: absolute;
+      width: 210px;
+      height: 30px;
+      top: 30px;
+      left: 50px;
     }
+
+    .navUl {
+      display: flex;
+      position: absolute;
+      top: 38px;
+      left: 285px;
+
+      .navLi {
+        margin: 0 12px;
+
+        &:hover {
+          cursor: pointer;
+>>>>>>> master
+        }
+      }
+    }
+  }
 }
 
 .HeaderNavHide {
-    transform: translateY(-100px);
-    pointer-events: none;
-    color: #000;
-    transition: all 0.3s cubic-bezier(1, 0, .8, 1);
+  transform: translateY(-100px);
+  pointer-events: none;
+  color: #000;
+  transition: all 0.3s cubic-bezier(1, 0, 0.8, 1);
 }
 
 .HeaderNavShow {
-    transform: translateY(0);
-    color: #fff;
-    transition: all 0.3s cubic-bezier(1, 0, .8, 1);
-}
-
-.HeaderBgHide {
-    background: none;
+  transform: translateY(0);
+  color: #fff;
+  transition: all 0.3s cubic-bezier(1, 0, 0.8, 1);
 }
 
 .HeaderBgShow {
-    background: black;
+  background: black;
 }
