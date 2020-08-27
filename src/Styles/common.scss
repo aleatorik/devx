@@ -51,6 +51,6 @@ $backgroundColor: #000;
   }
 }
 
-body {
-  background-color: $backgroundColor;
+html {
+  scroll-behavior: smooth;
 }

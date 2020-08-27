@@ -1,0 +1,40 @@
+@import "../../../Styles/common.scss";
+@import "../Falcon9.scss";
+
+.YoutubeModal {
+  position: fixed;
+  top: 0%;
+  width: 100vw;
+  height: 100vh;
+  @include center;
+  background-color: $backgroundColor;
+  z-index: 2;
+
+  &.disappear {
+    animation: toTop 1010ms ease-in-out;
+  }
+  &.appear {
+    animation: bottomToTop 1010ms ease-in-out;
+  }
+
+  iframe {
+    width: 80%;
+    height: 80%;
+  }
+
+  .closeBtnWrapper {
+    position: absolute;
+    right: 10vh;
+    height: 80%;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .descriptionOfVideo {
+    position: absolute;
+    bottom: 5%;
+    @include fontBold;
+    font-size: 17px;
+    font-weight: 600;
+  }
+}

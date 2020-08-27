@@ -16,12 +16,54 @@
   color: $fontColor-white;
 }
 
+.bgColorBlack {
+  background-color: black;
+}
+
 .Falcon9 {
   @include fontRegular;
   color: $fontColor-white;
 
+  button {
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    border: none;
+    outline: none;
+    background: transparent;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
   .fadeinAnimation {
     animation: fadeIn 1.5s ease-in-out forwards;
+  }
+
+  @keyframes bottomToTop {
+    from {
+      transform: translateY(100vh);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes toTop {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-100vh);
+    }
   }
 
   .background {
