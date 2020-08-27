@@ -1,6 +1,8 @@
 import React, { Component } from "react";
-import "./Shop.scss";
+import Nav from "../../Components/nav/Nav";
+import Footer from "../../Components/footer/Footer";
 import ProductList from "./Components/productList/ProductList";
+import "./Shop.scss";
 
 class Shop extends Component {
   constructor() {
@@ -21,6 +23,7 @@ class Shop extends Component {
   render() {
     return (
       <div>
+        <Nav alwaysNavOn alwaysBgOn />
         <main className="main">
           <header className="pageHeader">
             <div className="container">
@@ -41,6 +44,7 @@ class Shop extends Component {
             </div>
           </div>
         </main>
+        <Footer />
       </div>
     );
   }
