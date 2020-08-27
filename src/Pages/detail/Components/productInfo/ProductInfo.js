@@ -19,16 +19,14 @@ class ProductInfo extends Component {
     };
   }
 
-  componentDidMount = () => {
+  submitCartInfo = () => {
     if (sessionStorage.getItem("access_token")) {
       return;
     } else {
       alert("로그인 먼저 진행해주세요");
       this.props.history.push("/account");
     }
-  };
 
-  submitCartInfo = () => {
     const { id, img, productName, size, price, count } = this.state;
     fetch("http://localhost:3000/data/productInfo/productInfo.json", {
       method: "Post",
