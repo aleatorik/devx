@@ -1,11 +1,30 @@
 import React, { Component } from "react";
+import PlayIconSvg from "./PlayIconSvg";
 import "./Video.scss";
 
 class Video extends Component {
   render() {
+    const {
+      handleModal,
+      isModalRendered,
+      modalHaventRenderBefore,
+    } = this.props;
     return (
-      <section className="Video">
-        <div className="background">{PLAYICON}</div>
+      <section
+        className={`Video ${
+          modalHaventRenderBefore
+            ? ""
+            : isModalRendered
+            ? "disappear"
+            : "appear"
+        }`}
+        //Modal이 한번도 렌더되지 않았을때는 애니메이션이 없다가 Modal이 최초 렌더된 시기부터 애니메이션을 적용시키기 위한 로직
+      >
+        <div className="background">
+          <button onClick={handleModal}>
+            <PlayIconSvg />
+          </button>
+        </div>
         <article>
           <div className="description fadeinAnimation">
             <span>VIDEO</span>
@@ -16,22 +35,5 @@ class Video extends Component {
     );
   }
 }
-
-const PLAYICON = (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="64.025"
-    height="81.486"
-    viewBox="0 0 64.025 81.486"
-  >
-    <g>
-      <path
-        d="M8,5V86.486L72.025,45.743Z"
-        transform="translate(-8 -5)"
-        fill="#fff"
-      ></path>
-    </g>
-  </svg>
-);
 
 export default Video;
