@@ -13,10 +13,10 @@ class Shop extends Component {
   }
 
   componentDidMount = () => {
-    fetch("http://localhost:3000/data/product/product.json")
+    fetch("http://10.58.7.172:8000/products?category=1")
       .then((response) => response.json())
       .then((response) => {
-        this.setState({ product: response.product });
+        this.setState({ product: response.products });
       });
   };
 

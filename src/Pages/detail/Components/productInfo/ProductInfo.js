@@ -9,9 +9,11 @@ class ProductInfo extends Component {
     super(props);
 
     this.state = {
-      colors: "",
+      product_name: "",
+      color: "",
       size: "",
       quantity: "",
+
       count: 0,
       isModalActive: false,
     };

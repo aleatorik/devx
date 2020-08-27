@@ -5,10 +5,9 @@ import "../../Shop.scss";
 
 class ProductList extends Component {
   state = {
-    id: "",
-    src: "",
     name: "",
     price: "",
+    imageURL: "",
   };
 
   render() {
@@ -16,11 +15,10 @@ class ProductList extends Component {
       <div className="ProductList aspectRatio aspectRatio--withFallback">
         {this.props.product.map((product) => (
           <Product
-            key={product.frontSrc}
-            frontSrc={product.frontSrc}
-            backSrc={product.backSrc}
+            key={product.imageURL}
             name={product.name}
             price={product.price}
+            imageURL={product.imageURL}
           />
         ))}
       </div>
