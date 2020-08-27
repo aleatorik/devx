@@ -19,6 +19,32 @@ class ProductInfo extends Component {
     };
   }
 
+  componentDidMount = () => {
+    if (sessionStorage.getItem("access_token")) {
+      return;
+    } else {
+      alert("로그인 먼저 진행해주세요");
+      this.props.history.push("/account");
+    }
+  };
+
+  submitCartInfo = () => {
+    const { id, img, productName, size, price, count } = this.state;
+    fetch("http://localhost:3000/data/productInfo/productInfo.json", {
+      method: "Post",
+      body: JSON.stringify({
+        id: id,
+        img: img,
+        productName: productName,
+        size: size,
+        price: price,
+        count: count,
+      }),
+    })
+      .then((res) => res.json())
+      .then((res) => console.log(res));
+  };
+
   render() {
     return (
       <div className="ProductInfo">
