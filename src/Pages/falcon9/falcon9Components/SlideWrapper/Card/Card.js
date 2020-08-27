@@ -13,9 +13,9 @@ class Card extends Component {
 
   render() {
     const { cardInformation, shouldParallaxAppear } = this.props;
-    const { backgroundImgUrl, videoUrl, cardContents } = cardInformation;
     const { activeTab } = this.state;
     const { handleTab } = this;
+    const { backgroundImgUrl, videoUrl, cardContents } = cardInformation;
     return (
       <div className="Card">
         <div

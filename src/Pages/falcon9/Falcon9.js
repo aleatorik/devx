@@ -2,13 +2,13 @@ import React, { Component } from "react";
 import Nav from "../../Components/nav/Nav";
 import Featuer from "./feature/Featuer";
 import Stats from "./stats/Stats";
+import ParallaxSlider from "./ParallaxSlide/ParallaxSlide";
 import Video from "./Video/Video";
 import Engines from "./Engines/Engines";
-import Footer from "../../Components/footer/Footer";
 import Gallery from "./Gallery/Gallery";
-import ParallaxSlider from "./ParallaxSlide/ParallaxSlide";
-import delayUnmounting from "./YoutubeModal/DelayUnmounting";
+import Footer from "../../Components/footer/Footer";
 import Modal from "./YoutubeModal/YoutubeModal";
+import delayUnmounting from "./YoutubeModal/DelayUnmounting";
 import "./Falcon9.scss";
 
 const DelayModal = delayUnmounting(Modal);
@@ -38,8 +38,7 @@ class Falcon9 extends Component {
   }
 
   recordScrollPosition = (e) => {
-    const nowScrollPosition = e.srcElement.scrollingElement.scrollY;
-    console.log(window.scrollY);
+    const nowScrollPosition = e.srcElement.scrollingElement.scrollTop;
     this.setState({ nowScrollPosition });
   };
 

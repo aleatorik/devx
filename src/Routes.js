@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Falcon9 from "./Pages/falcon9/Falcon9";
 import Main from "./Pages/main/Main";
 import Shop from "./Pages/shop/Shop";
-import Detail from "./Pages/detail/Detail";
+// import Detail from "./Pages/detail/Detail";
 
 class Routes extends React.Component {
   render() {
@@ -13,7 +13,7 @@ class Routes extends React.Component {
           <Route exact path="/" component={Main} />
           <Route exact path="/falcon9" component={Falcon9} />
           <Route exact path="/shop" component={Shop} />
-          <Route exact path="/shop/detail" component={Detail} />
+          {/* <Route exact path="/shop/detail" component={Detail} /> */}
         </Switch>
       </Router>
     );
