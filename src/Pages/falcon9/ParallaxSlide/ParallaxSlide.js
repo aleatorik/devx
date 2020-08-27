@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Card from "../falcon9Components/SlideWrapper/Card/Card";
 import SlideWrapper from "../falcon9Components/SlideWrapper/SlideWrapper";
+import throttle from "../throttle";
 import "./ParallaxSlide.scss";
 
 class ParallaxSlide extends Component {
@@ -11,17 +12,11 @@ class ParallaxSlide extends Component {
   };
 
   componentDidMount() {
-    window.addEventListener(
-      "scroll",
-      this.throttle(this.checkScrollEvent, 100)
-    );
+    window.addEventListener("scroll", throttle(this.checkScrollEvent, 10));
   }
 
   componentWillUnmount() {
-    window.removeEventListener(
-      "scroll",
-      this.throttle(this.checkScrollEvent, 100)
-    );
+    window.removeEventListener("scroll", throttle(this.checkScrollEvent, 10));
   }
 
   recordDistanceToRevealTop = () => {
@@ -29,18 +24,9 @@ class ParallaxSlide extends Component {
     this.setState({ distanceToRevealTop }, this.checkRevealIsInView);
   };
 
-  checkRevealIsInView = () => {
-    const { distanceToRevealTop } = this.state;
-    if (distanceToRevealTop <= 0 && distanceToRevealTop > -1329) {
-      this.setState({ revealIsInView: true });
-    } else {
-      this.setState({ revealIsInView: false });
-    }
-  };
-
   checkShouldParallaxAppear = () => {
     const { distanceToRevealTop } = this.state;
-    if (distanceToRevealTop < -650) {
+    if (distanceToRevealTop < -700) {
       this.setState({ shouldParallaxAppear: true });
     } else {
       this.setState({ shouldParallaxAppear: false });
@@ -49,29 +35,11 @@ class ParallaxSlide extends Component {
 
   checkScrollEvent = async () => {
     await this.recordDistanceToRevealTop();
-    this.checkRevealIsInView();
     this.checkShouldParallaxAppear();
   };
 
-  throttle = (func, delay) => {
-    let timer;
-    return function () {
-      if (!timer) {
-        timer = setTimeout(() => {
-          timer = false;
-          func(...arguments);
-        }, delay);
-      }
-    };
-  };
-
   render() {
-    console.log(this.state);
-    const {
-      distanceToRevealTop,
-      revealIsInView,
-      shouldParallaxAppear,
-    } = this.state;
+    const { shouldParallaxAppear } = this.state;
     return (
       <section className="ParallaxSlide">
         <article className="revealCard" ref={(ref) => (this.reveal = ref)}>
@@ -88,11 +56,7 @@ class ParallaxSlide extends Component {
             </div>
           </div>
         </article>
-        <SlideWrapper
-          distanceToRevealTop={distanceToRevealTop}
-          revealIsInView={revealIsInView}
-          shouldParallaxAppear={shouldParallaxAppear}
-        />
+        <SlideWrapper shouldParallaxAppear={shouldParallaxAppear} />
       </section>
     );
   }

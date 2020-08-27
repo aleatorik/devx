@@ -13,7 +13,6 @@ class Card extends Component {
 
   render() {
     const { cardInformation, shouldParallaxAppear } = this.props;
-    console.log(this.props);
     const { backgroundImgUrl, videoUrl, cardContents } = cardInformation;
     const { activeTab } = this.state;
     const { handleTab } = this;
@@ -27,7 +26,7 @@ class Card extends Component {
         />
         {videoUrl && (
           <video
-            autoPlay={true}
+            autoPlay
             muted
             loop
             src={shouldParallaxAppear ? videoUrl[1] : videoUrl[0]}

@@ -1,16 +1,6 @@
 @import "../../../../../../../../Styles/common.scss";
 @import "../../../../../../../falcon9/Falcon9.scss";
 
-.TableSelectBtnHline {
-  width: 1px;
-  height: 16px;
-  margin: 0 10px;
-  background-color: $fontColor-lightGray;
-  &:last-of-type {
-    display: none;
-  }
-}
-
 .TabSelectBtn {
   @include center;
   height: 20px;
@@ -27,5 +17,15 @@
   &.unactiveBtn {
     color: $fontColor-lightGray;
     opacity: 0.8;
+  }
+}
+
+.TableSelectBtnHline {
+  width: 1px;
+  height: 16px;
+  margin: 0 10px;
+  background-color: $fontColor-lightGray;
+  &:last-of-type {
+    display: none;
   }
 }

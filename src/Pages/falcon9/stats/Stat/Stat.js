@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import throttle from "../../throttle";
 import "./Stat.scss";
 
 class Stat extends Component {
@@ -14,28 +15,21 @@ class Stat extends Component {
     }
   };
 
-  intervalIncrease = (stat, limit) => {
+  intervalIncrease = () => {
+    const { name, value } = this.props;
     let interval = setInterval(() => {
-      this.increaseStat(stat, limit);
-      if (this.state[stat] === limit) {
+      this.increaseStat(name, value);
+      if (this.state[name] === value) {
         clearInterval(interval);
       }
     }, 10);
   };
 
   render() {
-    const { intervalIncrease } = this;
     const { name, value, description } = this.props;
     return (
       <div className="Stat">
-        <span
-          className="statNumber"
-          onClick={() => {
-            intervalIncrease(name, value);
-          }}
-        >
-          {this.state[name]}
-        </span>
+        <span className="statNumber">{this.state[name]}</span>
         <span className="statDescription">{description}</span>
       </div>
     );

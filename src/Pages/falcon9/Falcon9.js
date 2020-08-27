@@ -22,22 +22,24 @@ class Falcon9 extends Component {
   };
 
   componentDidMount() {
+    window.addEventListener("scroll", this.recordScrollPosition);
     const body = document.getElementsByTagName("body")[0];
     const orgBodyClassName = body.className;
     this.setState({ orgBodyClassName });
     body.className = `${orgBodyClassName} bgColorBlack`;
     // Mac에서 페이지 위 아래로 스크롤 할 경우 하얀색이 나오는 버그를 대응하기 위해서 Body에 backgroundColor:black을 적용시키기 위함
-    window.addEventListener("scroll", this.recordScrollPosition);
   }
 
   componentWillUnmount() {
+    window.removeEventListener("scroll", this.recordScrollPosition);
     const body = document.getElementsByTagName("body")[0];
     body.className = this.state.orgBodyClassName;
     // 다른 페이지에 영향이 가지 않도록 body백그라운드 속성 준 ClassName 초기화 하는 로직
   }
 
   recordScrollPosition = (e) => {
-    const nowScrollPosition = e.srcElement.scrollingElement.scrollTop;
+    const nowScrollPosition = e.srcElement.scrollingElement.scrollY;
+    console.log(window.scrollY);
     this.setState({ nowScrollPosition });
   };
 

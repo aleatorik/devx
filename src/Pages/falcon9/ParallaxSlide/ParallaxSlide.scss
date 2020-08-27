@@ -2,12 +2,12 @@
 
 .ParallaxSlide {
   @include sectionStyle;
-  height: auto;
+  height: 200vh;
 
   .revealCard {
-    position: relative;
+    position: absolute;
     width: 100%;
-    height: 1329px;
+    height: 100vh;
     z-index: 1;
 
     .revealCardContents {
@@ -16,12 +16,12 @@
       height: 100vh;
 
       .cardContentsInnerWrapper {
-        width: 50%;
-        max-width: 520px;
         position: absolute;
         top: 50%;
         left: 20%;
         transform: translateY(-50%);
+        width: 50%;
+        max-width: 520px;
         text-align: left;
 
         .description {

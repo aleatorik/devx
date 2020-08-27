@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Card from "./Card/Card";
+import Arrows from "./Arrows";
 import "./SlideWrapper.scss";
 
 class SlideWrapper extends Component {
@@ -7,7 +8,8 @@ class SlideWrapper extends Component {
     super(props);
     this.state = {
       cardInformation: [],
-      parallaxMoveValue: 0,
+      appearCardIdx: 0,
+      totalCardNum: 0,
     };
   }
 
@@ -17,56 +19,78 @@ class SlideWrapper extends Component {
       .then((res) => {
         this.setState({
           cardInformation: res.cardInformation,
+          totalCardNum: res.cardInformation.length - 1,
         });
       });
   }
 
-  componentDidUpdate(prevProps) {
-    this.throttle(this.calc(prevProps), 1000);
-  }
-
-  calc = (prevProps) => {
-    const { distanceToRevealTop } = this.props;
-    if (distanceToRevealTop < 0 && distanceToRevealTop > -1329) {
-      if (prevProps.distanceToRevealTop !== distanceToRevealTop) {
-        const parallaxMoveValue = -distanceToRevealTop;
-        this.setState({
-          parallaxMoveValue,
-        });
-      }
+  goToNext = () => {
+    const { appearCardIdx, totalCardNum } = this.state;
+    if (appearCardIdx <= totalCardNum) {
+      this.setState({ appearCardIdx: appearCardIdx + 1 });
     }
   };
 
-  throttle = (func, delay) => {
-    let timer;
-    return function () {
-      if (!timer) {
-        timer = setTimeout(() => {
-          timer = false;
-          func(...arguments);
-        }, delay);
-      }
-    };
+  goToPrev = () => {
+    const { appearCardIdx } = this.state;
+    if (appearCardIdx >= 0) {
+      this.setState({ appearCardIdx: appearCardIdx - 1 });
+    }
   };
 
   render() {
-    const { revealIsInView, shouldParallaxAppear } = this.props;
-    const { cardInformation, parallaxMoveValue } = this.state;
+    const { shouldParallaxAppear } = this.props;
+    const { cardInformation, appearCardIdx, totalCardNum } = this.state;
+    const { goToNext, goToPrev } = this;
+    const { leftArrowSvg, rightArrowSvg } = Arrows;
     return (
-      <article
-        className="SlideWrapper"
-        style={{
-          transform: `matrix(1, 0, 0, 1, 0, ${-1329 + parallaxMoveValue})`,
-        }}
-      >
-        {cardInformation.map((el, idx) => (
-          <Card
-            key={idx}
-            cardInformation={el}
-            shouldParallaxAppear={shouldParallaxAppear}
-            revealIsInView={revealIsInView}
-          />
-        ))}
+      <article className="SlideWrapper">
+        <div
+          className="slideContents"
+          style={{
+            transform: `translateX(-${appearCardIdx * 100}%)`,
+          }}
+        >
+          {cardInformation.map((el, idx) => (
+            <Card
+              key={idx}
+              cardInformation={el}
+              shouldParallaxAppear={shouldParallaxAppear}
+            />
+          ))}
+        </div>
+        {shouldParallaxAppear && (
+          <>
+            <div className="btnContainer">
+              <button
+                className="prevBtn"
+                disabled={appearCardIdx === 0}
+                onClick={goToPrev}
+              >
+                {leftArrowSvg}
+              </button>
+              <button
+                className="nextBtn"
+                disabled={appearCardIdx === totalCardNum}
+                onClick={goToNext}
+              >
+                {rightArrowSvg}
+              </button>
+            </div>
+            <div className="paginationDots">
+              {cardInformation.map((el, idx) => {
+                return (
+                  <span
+                    className={`paginationDot ${
+                      appearCardIdx === idx ? "activeDot" : "unactiveDot"
+                    }`}
+                    onClick={() => this.setState({ appearCardIdx: idx })}
+                  />
+                );
+              })}
+            </div>
+          </>
+        )}
       </article>
     );
   }

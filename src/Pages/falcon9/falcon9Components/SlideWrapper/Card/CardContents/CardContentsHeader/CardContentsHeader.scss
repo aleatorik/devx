@@ -5,8 +5,8 @@
   text-align: left;
 
   .category {
-    @include fontRegular;
     margin-bottom: 10px;
+    @include fontRegular;
     font-size: 20px;
     font-weight: 200;
   }
