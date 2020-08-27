@@ -9,11 +9,9 @@ class ProductInfo extends Component {
     super(props);
 
     this.state = {
-      id: 0,
-      img: "",
-      productName: "",
+      colors: "",
       size: "",
-      price: "",
+      quantity: "",
       count: 0,
       isModalActive: false,
     };
@@ -27,20 +25,26 @@ class ProductInfo extends Component {
       this.props.history.push("/account");
     }
 
-    const { id, img, productName, size, price, count } = this.state;
+    const { colors, quantity, size, count } = this.state;
+
     fetch("http://localhost:3000/data/productInfo/productInfo.json", {
       method: "Post",
       body: JSON.stringify({
-        id: id,
-        img: img,
-        productName: productName,
+        colors: colors,
         size: size,
-        price: price,
+        quantity: quantity,
         count: count,
       }),
     })
       .then((res) => res.json())
       .then((res) => console.log(res));
+  };
+
+  handleQuantity = (e) => {
+    this.setState({
+      count:
+        e.target.name === "add" ? this.state.count + 1 : this.state.count - 1,
+    });
   };
 
   render() {
@@ -91,7 +95,13 @@ class ProductInfo extends Component {
                 </div>
                 <div className="productForm__quantitySelector">
                   <div className="quantitySelector quantitySelector__large">
-                    <span className="quantitySelector__btn decrease-quantity">
+                    <button
+                      type="button"
+                      name="sub"
+                      onClick={this.handleQuantity}
+                      value="decrement"
+                      className="quantitySelector__btn decrease-quantity"
+                    >
                       <svg
                         className="Icon Icon--minus"
                         role="presentation"
@@ -105,13 +115,19 @@ class ProductInfo extends Component {
                           stroke-linecap="square"
                         ></path>
                       </svg>
-                    </span>
+                    </button>
                     <input
                       type="text"
-                      placeholder="1"
+                      placeholder={this.state.count}
                       className="quantitySelector__currentQuantity"
                     />
-                    <span className="quantitySelector__btn increase-quantity">
+                    <button
+                      type="button"
+                      name="add"
+                      onClick={this.handleQuantity}
+                      value="increment"
+                      className="quantitySelector__btn increase-quantity"
+                    >
                       <svg
                         className="Icon Icon--plus"
                         role="presentation"
@@ -127,7 +143,7 @@ class ProductInfo extends Component {
                           <path d="M1,8 L15,8"></path>
                         </g>
                       </svg>
-                    </span>
+                    </button>
                   </div>
                 </div>
               </div>
