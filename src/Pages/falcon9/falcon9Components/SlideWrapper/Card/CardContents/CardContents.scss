@@ -1,0 +1,33 @@
+@import "../../../../Falcon9.scss";
+
+.CardContents {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  transition: opacity 300ms ease-in-out;
+
+  &.disappear {
+    opacity: 0;
+  }
+
+  &.appear {
+    opacity: 1;
+  }
+  .cardContentsInnerWrapper {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translateY(-50%);
+    width: 50%;
+    max-width: 520px;
+    text-align: left;
+  }
+
+  .description {
+    margin: 20px 0 15px;
+    @include fontRegular;
+    font-size: 20px;
+    font-weight: 200;
+    line-height: 1.75;
+  }
+}

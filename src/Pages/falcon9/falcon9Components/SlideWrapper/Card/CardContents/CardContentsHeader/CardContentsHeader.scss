@@ -1,0 +1,19 @@
+@import "../../../../../Falcon9.scss";
+
+.CardContentsHeader {
+  max-width: 520px;
+  text-align: left;
+
+  .category {
+    margin-bottom: 10px;
+    @include fontRegular;
+    font-size: 20px;
+    font-weight: 200;
+  }
+
+  .title {
+    @include fontBold;
+    font-size: 46px;
+    font-weight: 600;
+  }
+}

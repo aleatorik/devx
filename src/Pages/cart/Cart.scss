@@ -1,0 +1,61 @@
+@import '../../Styles/common.scss';
+
+.Cart{
+    .cartContainer {
+        width: 1000px;
+        @include fontBold;
+        font-size: 13px;
+        font-weight: bold;
+        margin: auto;
+    
+        .txtCartContainer {
+            margin: 50px 0;
+            .txtCart {
+                font-size: 24px;
+                text-align: center;
+            }
+        }
+    
+        .txtContainer {
+            @include flexCenterAndSetJustify(space-between);
+            width: 100%;
+            height: 50px;
+            border-bottom: 1px solid $borderColor;
+        }
+    
+        .cartListContainer {
+            @include flexCenterAndSetJustify($justify-content: space-around);
+            flex-direction: column;
+            margin: 15px 0;
+        }
+    
+        .totalContainer {
+            height: 155px;
+            border-top: 1px solid $borderColor;
+            padding-top: 30px;
+            margin-bottom: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-end;
+            font-size: 15px;
+    
+            .shipping {
+                font-weight: normal;
+            }
+    
+            .totalBtnContainer {
+                .btnCheckout {
+                    width: 140px;
+                    height: 44px;
+                    font-size: 13px;
+                    font-weight: bold;
+                    color: white;
+                    background: black;
+                    outline: none;
+                    border: none;
+                }
+            }
+        }
+    }
+}

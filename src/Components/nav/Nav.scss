@@ -1,42 +1,46 @@
 @import "../../Styles/common.scss";
 
 .Header {
-  background-color: #000;
-  height: 100px;
-  @include fontBold;
-  font-size: 14px;
-  font-weight: bold;
-  color: $fontColor-white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    @include fontBold;
+    font-size: 14px;
+    font-weight: bold;
+    color: $fontColor-white;
+    z-index: 5;
 
-  .headerInnerContainer {
-    position: relative;
-    max-width: 1400px;
-    height: 100%;
-    margin: 0 auto;
+    .headerInnerContainer {
+        position: relative;
+        max-width: 1400px;
+        height: 100%;
+        margin: 0 auto;
 
-    .spaceXIcon {
-      position: absolute;
-      width: 210px;
-      height: 30px;
-      top: 30px;
-      left: 50px;
-    }
-
-    .navUl {
-      display: flex;
-      position: absolute;
-      top: 38px;
-      left: 285px;
-
-      .navLi {
-        margin: 0 12px;
-
-        &:hover {
-          cursor: pointer;
+        .spaceXIcon {
+            position: absolute;
+            width: 210px;
+            height: 30px;
+            top: 30px;
+            left: 50px;
         }
-      }
+
+        .navUl {
+            display: flex;
+            position: absolute;
+            top: 38px;
+            left: 285px;
+
+            .navLi {
+                margin: 0 12px;
+                color: white;
+            
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
     }
-  }
 }
 
 .HeaderNavHide {

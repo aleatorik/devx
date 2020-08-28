@@ -1,6 +1,7 @@
 @import '../../Styles/common.scss';
 
 .LinkBox {
+    position: relative;
     width: 200px;
     height: 50px;
     border: 2px solid $fontColor-white;
@@ -13,7 +14,7 @@
 
     &:hover {
         .fillBG {
-            top: 2px;
+            top: 0;
             background-color: #ffff;
             transition-property: top;
             transition-duration: 0.5s;
