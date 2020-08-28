@@ -20,17 +20,17 @@
 
       &:last-child {
         font-size: 16px;
-      }
-    }
 
-    span {
-      color: $fontColor-lightGray;
+        span {
+          color: $fontColor-lightGray;
 
-      &::before {
-        content: "/";
-        display: inline-block;
-        margin: 0 5px;
-        margin-left: 10px;
+          &::before {
+            content: "/";
+            display: inline-block;
+            margin: 0 5px;
+            margin-left: 10px;
+          }
+        }
       }
     }
   }
