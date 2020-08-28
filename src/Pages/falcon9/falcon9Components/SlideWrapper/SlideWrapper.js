@@ -36,7 +36,7 @@ class SlideWrapper extends Component {
   };
 
   render() {
-    const { shouldParallaxAppear } = this.props;
+    const { shouldParallaxAppear, isEnterView } = this.props;
     const { cardInformation, appearCardIdx, totalCardNum } = this.state;
     const { goToNext, goToPrev } = this;
     const { leftArrowSvg, rightArrowSvg } = Arrows;
@@ -51,6 +51,7 @@ class SlideWrapper extends Component {
           {cardInformation.map((el, idx) => (
             <Card
               key={idx}
+              isEnterView={isEnterView}
               cardInformation={el}
               shouldParallaxAppear={shouldParallaxAppear}
             />
@@ -78,6 +79,7 @@ class SlideWrapper extends Component {
               {cardInformation.map((el, idx) => {
                 return (
                   <span
+                    key={idx}
                     className={`paginationDot ${
                       appearCardIdx === idx ? "activeDot" : "unactiveDot"
                     }`}

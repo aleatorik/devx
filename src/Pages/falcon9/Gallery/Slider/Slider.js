@@ -28,7 +28,7 @@ export default class Slider extends Component {
 
   render() {
     const { appearCardIdx, totalCardNum } = this.state;
-    const { cardData } = this.props;
+    const { cardData, isEnterView } = this.props;
     const { goToNext, goToPrev } = this;
     const { leftArrowSvg, rightArrowSvg } = Arrows;
     return (
@@ -38,8 +38,15 @@ export default class Slider extends Component {
             transform: `translateX(-${appearCardIdx * 100}%)`,
           }}
         >
-          {cardData.map((el) => {
-            return <ImgCard key={el.imgSrc} cardData={el} />;
+          {cardData.map((el, idx) => {
+            return (
+              <ImgCard
+                key={el.imgSrc}
+                cardData={el}
+                appearCardIdx={appearCardIdx}
+                idx={idx}
+              />
+            );
           })}
         </article>
         <div className="btnContainer">

@@ -3,24 +3,15 @@ import Stat from "./Stat/Stat";
 import "./Stats.scss";
 
 class Stats extends Component {
-  state = {
-    isEverView: false,
-    isInView: false,
-  };
-
-  componentDidMount() {
-    window.addEventListener("scroll", this.checkIsInView);
-  }
-
   render() {
-    const { isInView } = this.state;
+    const { isEnterView } = this.props;
     return (
       <section className="Stats">
         <article className="statsContents">
           {STATS_INFO.map(({ statName, statValue, statDescription }) => {
             return (
               <Stat
-                isInView={isInView}
+                isEnterView={isEnterView}
                 key={statName}
                 name={statName}
                 value={statValue}
