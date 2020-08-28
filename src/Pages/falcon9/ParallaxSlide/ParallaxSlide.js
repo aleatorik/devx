@@ -27,13 +27,8 @@ class ParallaxSlide extends Component {
   checkShouldParallaxAppear = () => {
     const screenY = window.innerHeight;
     const { distanceToRevealTop } = this.state;
-    console.log(distanceToRevealTop);
-    console.log(screenY);
-    if (distanceToRevealTop < -screenY * (45 / 100)) {
-      this.setState({ shouldParallaxAppear: true });
-    } else {
-      this.setState({ shouldParallaxAppear: false });
-    }
+    const isAppear = distanceToRevealTop < -screenY * (45 / 100);
+    this.setState({ shouldParallaxAppear: isAppear });
   };
 
   checkScrollEvent = async () => {

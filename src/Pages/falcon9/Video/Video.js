@@ -3,16 +3,6 @@ import PlayIconSvg from "./PlayIconSvg";
 import "./Video.scss";
 
 class Video extends Component {
-  // state = {
-  //   isInView: false,
-  // };
-
-  // componentDidUpdate(prevProps) {
-  //   if (prevProps.isInView !== this.props.isInView) {
-  //     this.setState({ isInView: !this.state.isInView });
-  //   }
-  // }
-
   render() {
     const {
       handleModal,

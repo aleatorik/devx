@@ -42,7 +42,7 @@ class Engines extends Component {
                 VACUUM
               </button>
             </div>
-            <p className={`description`}>
+            <p className="description">
               {activeTab === "seaLevel"
                 ? seaLevel.description
                 : vacuum.description}

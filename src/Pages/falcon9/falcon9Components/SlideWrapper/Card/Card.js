@@ -16,10 +16,11 @@ class Card extends Component {
     const { activeTab } = this.state;
     const { handleTab } = this;
     const { backgroundImgUrl, videoUrl, cardContents } = cardInformation;
+    const [linesVideo, renderVideo] = videoUrl;
     return (
       <div className="Card">
         <div
-          className={`background`}
+          className="background"
           style={{
             backgroundImage: `url(${backgroundImgUrl[activeTab]})`,
           }}
@@ -29,7 +30,7 @@ class Card extends Component {
             autoPlay
             muted
             loop
-            src={shouldParallaxAppear ? videoUrl[1] : videoUrl[0]}
+            src={shouldParallaxAppear ? renderVideo : linesVideo}
             className="backgroundVideo"
           />
         )}
