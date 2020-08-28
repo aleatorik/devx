@@ -1,0 +1,7 @@
+@import "../../../../../../../Styles/common.scss";
+
+.TabSelectArea {
+  @include flexCenterAndSetJustify(flex-start);
+  margin: 50px 0 30px;
+  color: white;
+}

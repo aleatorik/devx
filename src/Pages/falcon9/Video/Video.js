@@ -8,7 +8,9 @@ class Video extends Component {
       handleModal,
       isModalRendered,
       modalHaventRenderBefore,
+      isEnterView,
     } = this.props;
+
     return (
       <section
         className={`Video ${
@@ -26,7 +28,9 @@ class Video extends Component {
           </button>
         </div>
         <article>
-          <div className="description fadeinAnimation">
+          <div
+            className={`description ${isEnterView ? "fadeinAnimation" : ""}`}
+          >
             <span>VIDEO</span>
             <h1>FALCON 9 IN FLIGHT</h1>
           </div>

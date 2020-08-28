@@ -17,7 +17,7 @@ function delayUnmounting(Component) {
     }
 
     render() {
-      return this.state.shouldRender ? <Component {...this.props} /> : null;
+      return this.state.shouldRender && <Component {...this.props} />;
     }
   };
 }

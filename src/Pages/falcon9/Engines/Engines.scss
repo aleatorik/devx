@@ -4,10 +4,6 @@
 .Engines {
   @include sectionStyle;
 
-  .background {
-    transition: background-image 300ms ease-in-out;
-  }
-
   .seaLevelbg {
     background-image: url("/images/falcon9/merlinSeaLevel.webp");
   }
@@ -24,18 +20,6 @@
       left: 50px;
       max-width: 520px;
       text-align: left;
-
-      .category {
-        margin-bottom: 10px;
-        font-size: 20px;
-        font-weight: 400;
-      }
-
-      h1 {
-        @include fontBold;
-        font-size: 46px;
-        font-weight: 600;
-      }
 
       .tabSelectArea {
         @include flexCenterAndSetJustify(flex-start);
