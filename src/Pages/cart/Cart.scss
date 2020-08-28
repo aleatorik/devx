@@ -31,7 +31,6 @@
     
         .totalContainer {
             height: 155px;
-            font-size: 15px;
             border-top: 1px solid $borderColor;
             padding-top: 30px;
             margin-bottom: 100px;
@@ -39,6 +38,7 @@
             flex-direction: column;
             justify-content: space-between;
             align-items: flex-end;
+            font-size: 15px;
     
             .shipping {
                 font-weight: normal;

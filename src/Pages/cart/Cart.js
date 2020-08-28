@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import CartList from './component/CartList';
-import './Cart.scss';
-import List from './data.json';
 import Nav from '../../Components/nav/Nav';
 import Footer from '../../Components/footer/Footer';
+import List from './data.json';
+import './Cart.scss';
 
 class Cart extends Component {
     state = {

@@ -4,7 +4,6 @@ import Falcon9 from "./Pages/falcon9/Falcon9";
 import Main from "./Pages/main/Main";
 import Shop from "./Pages/shop/Shop";
 // import Detail from "./Pages/detail/Detail";
-import Cart from "./Pages/cart/Cart";
 
 class Routes extends React.Component {
   render() {
@@ -15,7 +14,6 @@ class Routes extends React.Component {
           <Route exact path="/falcon9" component={Falcon9} />
           <Route exact path="/shop" component={Shop} />
           {/* <Route exact path="/shop/detail" component={Detail} /> */}
-          <Route exact path="/cart" component={Cart} />
         </Switch>
       </Router>
     );
