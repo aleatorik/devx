@@ -18,13 +18,13 @@ class Input extends Component {
     };
 
     render() {
-        const {placeHolder, forgotPw} = this.props;
+        const {placeHolder, forgotPw, handleOnChange, name} = this.props;
         const {placeholderMove} = this.state;
 
         return (
             <div className="InputContainer">
                 <div className={`inputFont ${placeholderMove ? "placeholderGoUp" : "placeholderGoDown"}`}>{placeHolder}</div>
-                <input className="textInput" onKeyDown={this.handleInputKeyDown} onKeyUp={this.handleInputKeyUp} placeholder={placeHolder}/>
+                <input className="textInput" name={name} onChange={handleOnChange} onKeyDown={this.handleInputKeyDown} onKeyUp={this.handleInputKeyUp} placeholder={placeHolder}/>
                 {forgotPw ? <button className="btnForgot">Forgot password?</button> : ''}
             </div>
         );

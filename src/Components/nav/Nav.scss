@@ -1,12 +1,15 @@
 @import "../../Styles/common.scss";
 
 .Header {
-  background-color: #000;
+  position: fixed;
+  top: 0;
+  width: 100%;
   height: 100px;
   @include fontBold;
   font-size: 14px;
   font-weight: bold;
   color: $fontColor-white;
+  z-index: 5;
 
   .headerInnerContainer {
     position: relative;
@@ -30,6 +33,7 @@
 
       .navLi {
         margin: 0 12px;
+        color: white;
 
         &:hover {
           cursor: pointer;

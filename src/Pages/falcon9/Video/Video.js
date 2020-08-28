@@ -10,6 +10,7 @@ class Video extends Component {
       modalHaventRenderBefore,
       isEnterView,
     } = this.props;
+
     return (
       <section
         className={`Video ${

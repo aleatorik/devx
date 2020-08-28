@@ -6,6 +6,13 @@
   height: 100vh;
   transition: opacity 300ms ease-in-out;
 
+  &.disappear {
+    opacity: 0;
+  }
+
+  &.appear {
+    opacity: 1;
+  }
   .cardContentsInnerWrapper {
     position: absolute;
     top: 50%;

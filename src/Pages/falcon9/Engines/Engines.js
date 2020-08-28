@@ -22,7 +22,7 @@ class Engines extends Component {
         />
         <article className={`${isEnterView ? "fadeinAnimation" : ""}`}>
           <div className="enginesContentsTab">
-            <CardContentsHeader category={"Engines"} title={"MERLIN"} />
+            <CardContentsHeader category="Engines" title="MERLIN" />
             <div className="tabSelectArea">
               <button
                 className={activeTab === "seaLevel" ? "" : "unactive"}
