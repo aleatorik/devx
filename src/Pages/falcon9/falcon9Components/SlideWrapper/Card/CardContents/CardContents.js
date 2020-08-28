@@ -16,10 +16,9 @@ class CardContents extends Component {
     const { category, title } = header;
     return (
       <div
-        className="CardContents"
-        style={{
-          opacity: `${shouldParallaxAppear ? 1 : 0}`,
-        }}
+        className={`CardContents ${
+          shouldParallaxAppear ? "appear" : "disappear"
+        }`}
       >
         <div className="cardContentsInnerWrapper">
           {header.category && (

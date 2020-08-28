@@ -19,7 +19,7 @@ class Card extends Component {
     return (
       <div className="Card">
         <div
-          className={`background`}
+          className="background"
           style={{
             backgroundImage: `url(${backgroundImgUrl[activeTab]})`,
           }}

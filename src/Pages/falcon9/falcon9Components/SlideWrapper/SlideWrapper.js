@@ -4,14 +4,11 @@ import Arrows from "./Arrows";
 import "./SlideWrapper.scss";
 
 class SlideWrapper extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      cardInformation: [],
-      appearCardIdx: 0,
-      totalCardNum: 0,
-    };
-  }
+  state = {
+    cardInformation: [],
+    appearCardIdx: 0,
+    totalCardNum: 0,
+  };
 
   componentDidMount() {
     fetch("/data/falcon9/card.json")
