@@ -1,6 +1,9 @@
 import React, { Component } from "react";
-import "./Shop.scss";
+import Nav from "../../Components/nav/Nav";
+import Footer from "../../Components/footer/Footer";
 import ProductList from "./Components/productList/ProductList";
+import Config from "../../Config.js";
+import "./Shop.scss";
 
 class Shop extends Component {
   constructor() {
@@ -11,17 +14,18 @@ class Shop extends Component {
   }
 
   componentDidMount = () => {
-    fetch("http://localhost:3000/data/product/product.json")
+    fetch(`${Config.API}products?category=1`)
       .then((response) => response.json())
       .then((response) => {
-        this.setState({ product: response.product });
+        this.setState({ product: response.products });
       });
   };
 
   render() {
     return (
-      <div>
-        <main className="main">
+      <>
+        <Nav alwaysNavOn alwaysBgOn />
+        <main className="Shop">
           <header className="pageHeader">
             <div className="container">
               <div className="containerCenter">
@@ -41,7 +45,8 @@ class Shop extends Component {
             </div>
           </div>
         </main>
-      </div>
+        <Footer />
+      </>
     );
   }
 }

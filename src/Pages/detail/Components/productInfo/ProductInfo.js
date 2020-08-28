@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import ColorSelectModal from "../../colorModal/ColorSelectModal";
 import FooIcon from "../fooIcon/FooIcon";
+import Config from "../../../../Config";
 import "./ProductInfo.scss";
 
 class ProductInfo extends Component {
@@ -9,36 +10,37 @@ class ProductInfo extends Component {
     super(props);
 
     this.state = {
-      id: 0,
-      img: "",
-      productName: "",
+      color: "",
       size: "",
-      price: "",
+      quantity: "",
       count: 0,
       isModalActive: false,
     };
   }
 
-  componentDidMount = () => {
+  handleQuantity = (e) => {
+    this.setState({
+      count:
+        e.target.name === "add" ? this.state.count + 1 : this.state.count - 1,
+    });
+  };
+
+  submitCartInfo = () => {
     if (sessionStorage.getItem("access_token")) {
-      return;
+      return this.props.history.push("/cart");
     } else {
       alert("로그인 먼저 진행해주세요");
       this.props.history.push("/account");
     }
-  };
 
-  submitCartInfo = () => {
-    const { id, img, productName, size, price, count } = this.state;
-    fetch("http://localhost:3000/data/productInfo/productInfo.json", {
-      method: "Post",
+    const { color, quantity, size } = this.state;
+
+    fetch(`${Config.API}products/1`, {
+      method: "POST",
       body: JSON.stringify({
-        id: id,
-        img: img,
-        productName: productName,
+        color: color,
         size: size,
-        price: price,
-        count: count,
+        quantity: quantity,
       }),
     })
       .then((res) => res.json())
@@ -46,17 +48,17 @@ class ProductInfo extends Component {
   };
 
   render() {
+    const { name, price, colors, size } = this.props;
+
     return (
       <div className="ProductInfo">
         <div className="product__info">
           <div className="container">
             <div className="productMeta">
-              <h1 className="productMeta__title heading">
-                Men's Demo 2 Mission T-Shirt
-              </h1>
+              <h1 className="productMeta__title heading">{name}</h1>
               <div className="productMeta__priceList heading">
                 <div className="productMeta__price price">
-                  <span className="money">$30.00</span>
+                  <span className="money">${price}</span>
                 </div>
               </div>
               <div className="productMeta__description">
@@ -76,7 +78,7 @@ class ProductInfo extends Component {
                     className="productForm__item"
                   >
                     <span className="productForm__optionName">
-                      Color: Black
+                      Color: {colors}
                       <span className="productForm__selectedValue"></span>
                     </span>
                     <FooIcon />
@@ -85,7 +87,7 @@ class ProductInfo extends Component {
                 <div className="productForm__option">
                   <button type="button" className="productForm__item">
                     <span className="productForm__optionName">
-                      Size: S
+                      Size: {size[1]}
                       <span className="productForm__selectedValue"></span>
                     </span>
                     <FooIcon />
@@ -93,7 +95,13 @@ class ProductInfo extends Component {
                 </div>
                 <div className="productForm__quantitySelector">
                   <div className="quantitySelector quantitySelector__large">
-                    <span className="quantitySelector__btn decrease-quantity">
+                    <button
+                      type="button"
+                      name="sub"
+                      onClick={this.handleQuantity}
+                      value="decrement"
+                      className="quantitySelector__btn decrease-quantity"
+                    >
                       <svg
                         className="Icon Icon--minus"
                         role="presentation"
@@ -107,13 +115,19 @@ class ProductInfo extends Component {
                           stroke-linecap="square"
                         ></path>
                       </svg>
-                    </span>
+                    </button>
                     <input
                       type="text"
-                      placeholder="1"
+                      placeholder={this.state.count}
                       className="quantitySelector__currentQuantity"
                     />
-                    <span className="quantitySelector__btn increase-quantity">
+                    <button
+                      type="button"
+                      name="add"
+                      onClick={this.handleQuantity}
+                      value="increment"
+                      className="quantitySelector__btn increase-quantity"
+                    >
                       <svg
                         className="Icon Icon--plus"
                         role="presentation"
@@ -129,7 +143,7 @@ class ProductInfo extends Component {
                           <path d="M1,8 L15,8"></path>
                         </g>
                       </svg>
-                    </span>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -168,8 +182,15 @@ class ProductInfo extends Component {
             onClick={() => this.setState({ isModalActive: false })}
           ></div>
         )}
-
-        <ColorSelectModal isActive={this.state.isModalActive} />
+        {this.props.popupProducts && (
+          <ColorSelectModal
+            name={this.props.popupProducts[0].name}
+            color={this.props.popupProducts[0].colors}
+            img={this.props.popupProducts[0].imageURL}
+            price={this.props.popupProducts[0].price}
+            isActive={this.state.isModalActive}
+          />
+        )}
       </div>
     );
   }

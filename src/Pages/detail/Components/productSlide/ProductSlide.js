@@ -11,7 +11,7 @@ class ProductSlide extends Component {
             <img
               alt="detail__item1"
               className="img__case"
-              src="https://cdn.shopify.com/s/files/1/0261/2615/5855/products/Mens_Demo2MissionPatch_T-Shirt_Black__BACK_600x.png?v=1596236118"
+              src={this.props.imageURL[0]}
             />
           </div>
         </div>
@@ -20,7 +20,7 @@ class ProductSlide extends Component {
             <img
               alt="detail__item1"
               className="img__case"
-              src="https://cdn.shopify.com/s/files/1/0261/2615/5855/products/Mens_T-Shirt_Black_FRONT_600x.png?v=1596236118"
+              src={this.props.imageURL[1]}
             />
           </div>
         </div>
