@@ -1,7 +1,6 @@
 @import "../../Styles/common.scss";
 
-.ButtonContainer {
-  button {
+button {
     width: 400px;
     height: 44px;
     @include fontBold;
@@ -11,5 +10,4 @@
     background: black;
     border: none;
     outline: none;
-  }
 }
