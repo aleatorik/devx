@@ -5,9 +5,20 @@ import ProductSlide from "../detail/Components/productSlide/ProductSlide";
 import ProductInfo from "../detail/Components/productInfo/ProductInfo";
 import ProductAside from "../detail/Components/productAside/ProductAside";
 import Footer from "../../Components/footer/Footer";
+import Config from "../../Config";
 import "./Detail.scss";
 
 class Detail extends Component {
+  state = {
+    data: {},
+  };
+
+  componentDidMount() {
+    fetch(`${Config.API}products/1`)
+      .then((res) => res.json())
+      .then((res) => this.setState({ data: res }));
+  }
+
   render() {
     return (
       <div className="Detail">
@@ -26,10 +37,26 @@ class Detail extends Component {
                     <Link className="navDot" to="/shop/detail/"></Link>
                   </div>
                 </div>
-                <ProductSlide />
+                {this.state.data.products &&
+                  this.state.data.products.map((data) => (
+                    <ProductSlide
+                      key={data.product_id}
+                      imageURL={data.imageURL}
+                    />
+                  ))}
               </div>
             </div>
-            <ProductInfo />
+            {this.state.data.products &&
+              this.state.data.products.map((data) => (
+                <ProductInfo
+                  popupProducts={this.state.data["pop-up products"]}
+                  key={data.name}
+                  name={data.name}
+                  price={data.price}
+                  colors={data.colors}
+                  size={data.size}
+                />
+              ))}
             <ProductAside />
           </div>
           <Footer />

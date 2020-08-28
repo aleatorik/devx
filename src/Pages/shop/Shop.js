@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Nav from "../../Components/nav/Nav";
 import Footer from "../../Components/footer/Footer";
 import ProductList from "./Components/productList/ProductList";
+import Config from "../../Config.js";
 import "./Shop.scss";
 
 class Shop extends Component {
@@ -13,7 +14,7 @@ class Shop extends Component {
   }
 
   componentDidMount = () => {
-    fetch("http://10.58.7.172:8000/products?category=1")
+    fetch(`${Config.API}products?category=1`)
       .then((response) => response.json())
       .then((response) => {
         this.setState({ product: response.products });
@@ -22,9 +23,9 @@ class Shop extends Component {
 
   render() {
     return (
-      <div>
+      <>
         <Nav alwaysNavOn alwaysBgOn />
-        <main className="main">
+        <main className="Shop">
           <header className="pageHeader">
             <div className="container">
               <div className="containerCenter">
@@ -45,7 +46,7 @@ class Shop extends Component {
           </div>
         </main>
         <Footer />
-      </div>
+      </>
     );
   }
 }

@@ -6,12 +6,11 @@ import "./Product.scss";
 class Product extends Component {
   render() {
     const { imageURL, name, price } = this.props;
-
     return (
       <div className="Product">
         <div className="productContainer">
           <div className="productItem">
-            <Link className="productItem__wrapper" to="/shop/detail">
+            <Link className="productItem__wrapper" to="/shop/detail/">
               <div className="imgFixedCtn">
                 <img
                   alt="tshirt-front"

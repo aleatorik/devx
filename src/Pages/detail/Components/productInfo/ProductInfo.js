@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import ColorSelectModal from "../../colorModal/ColorSelectModal";
 import FooIcon from "../fooIcon/FooIcon";
+import Config from "../../../../Config";
 import "./ProductInfo.scss";
 
 class ProductInfo extends Component {
@@ -9,38 +10,13 @@ class ProductInfo extends Component {
     super(props);
 
     this.state = {
-      product_name: "",
       color: "",
       size: "",
       quantity: "",
-
       count: 0,
       isModalActive: false,
     };
   }
-
-  submitCartInfo = () => {
-    if (sessionStorage.getItem("access_token")) {
-      return;
-    } else {
-      alert("로그인 먼저 진행해주세요");
-      this.props.history.push("/account");
-    }
-
-    const { colors, quantity, size, count } = this.state;
-
-    fetch("http://localhost:3000/data/productInfo/productInfo.json", {
-      method: "Post",
-      body: JSON.stringify({
-        colors: colors,
-        size: size,
-        quantity: quantity,
-        count: count,
-      }),
-    })
-      .then((res) => res.json())
-      .then((res) => console.log(res));
-  };
 
   handleQuantity = (e) => {
     this.setState({
@@ -49,18 +25,40 @@ class ProductInfo extends Component {
     });
   };
 
+  submitCartInfo = () => {
+    if (sessionStorage.getItem("access_token")) {
+      return this.props.history.push("/cart");
+    } else {
+      alert("로그인 먼저 진행해주세요");
+      this.props.history.push("/account");
+    }
+
+    const { color, quantity, size } = this.state;
+
+    fetch(`${Config.API}products/1`, {
+      method: "POST",
+      body: JSON.stringify({
+        color: color,
+        size: size,
+        quantity: quantity,
+      }),
+    })
+      .then((res) => res.json())
+      .then((res) => console.log(res));
+  };
+
   render() {
+    const { name, price, colors, size } = this.props;
+
     return (
       <div className="ProductInfo">
         <div className="product__info">
           <div className="container">
             <div className="productMeta">
-              <h1 className="productMeta__title heading">
-                Men's Demo 2 Mission T-Shirt
-              </h1>
+              <h1 className="productMeta__title heading">{name}</h1>
               <div className="productMeta__priceList heading">
                 <div className="productMeta__price price">
-                  <span className="money">$30.00</span>
+                  <span className="money">${price}</span>
                 </div>
               </div>
               <div className="productMeta__description">
@@ -80,7 +78,7 @@ class ProductInfo extends Component {
                     className="productForm__item"
                   >
                     <span className="productForm__optionName">
-                      Color: Black
+                      Color: {colors}
                       <span className="productForm__selectedValue"></span>
                     </span>
                     <FooIcon />
@@ -89,7 +87,7 @@ class ProductInfo extends Component {
                 <div className="productForm__option">
                   <button type="button" className="productForm__item">
                     <span className="productForm__optionName">
-                      Size: S
+                      Size: {size[1]}
                       <span className="productForm__selectedValue"></span>
                     </span>
                     <FooIcon />
@@ -184,8 +182,15 @@ class ProductInfo extends Component {
             onClick={() => this.setState({ isModalActive: false })}
           ></div>
         )}
-
-        <ColorSelectModal isActive={this.state.isModalActive} />
+        {this.props.popupProducts && (
+          <ColorSelectModal
+            name={this.props.popupProducts[0].name}
+            color={this.props.popupProducts[0].colors}
+            img={this.props.popupProducts[0].imageURL}
+            price={this.props.popupProducts[0].price}
+            isActive={this.state.isModalActive}
+          />
+        )}
       </div>
     );
   }

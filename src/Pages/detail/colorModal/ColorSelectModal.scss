@@ -56,6 +56,11 @@
         max-width: 900px;
         --aspect-ratio: 1;
 
+        .colorSelectModal__image {
+          width: 400px;
+          height: 350px;
+        }
+
         .Image--lazyLoad[data-sizes="auto"] {
           width: 100%;
         }
