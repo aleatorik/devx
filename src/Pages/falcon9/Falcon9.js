@@ -140,6 +140,7 @@ class Falcon9 extends Component {
   };
 
   render() {
+    console.log(this.state.isInView);
     const {
       nowScrollPosition,
       isModalRendered,

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Nav from "../../Components/nav/Nav";
 import Footer from "../../Components/footer/Footer";
 import ProductList from "./Components/productList/ProductList";
-import Config from "../../Config.js";
+import Config from "../../config";
 import "./Shop.scss";
 
 class Shop extends Component {
@@ -45,7 +45,7 @@ class Shop extends Component {
             </div>
           </div>
         </main>
-        <Footer />
+        <Footer fixedBottom />
       </>
     );
   }

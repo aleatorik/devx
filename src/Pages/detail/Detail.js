@@ -5,7 +5,7 @@ import ProductSlide from "../detail/Components/productSlide/ProductSlide";
 import ProductInfo from "../detail/Components/productInfo/ProductInfo";
 import ProductAside from "../detail/Components/productAside/ProductAside";
 import Footer from "../../Components/footer/Footer";
-import Config from "../../Config";
+import Config from "../../config";
 import "./Detail.scss";
 
 class Detail extends Component {
@@ -21,47 +21,49 @@ class Detail extends Component {
 
   render() {
     return (
-      <div className="Detail">
+      <>
         <Nav alwaysNavOn alwaysBgOn />
-        <main>
-          <div className="productLarge product">
-            <div className="product__wrapper">
-              <div className="product__display--withDots">
-                <span className="anchor" />
-                <div className="product__slideNav">
-                  <div className="product__slideNav--scroller">
-                    <Link
-                      className="navDot is-selected"
-                      to="/shop/detail/"
-                    ></Link>
-                    <Link className="navDot" to="/shop/detail/"></Link>
+        <div className="Detail">
+          <main>
+            <div className="productLarge product">
+              <div className="product__wrapper">
+                <div className="product__display--withDots">
+                  <span className="anchor" />
+                  <div className="product__slideNav">
+                    <div className="product__slideNav--scroller">
+                      <Link
+                        className="navDot is-selected"
+                        to="/shop/detail/"
+                      ></Link>
+                      <Link className="navDot" to="/shop/detail/"></Link>
+                    </div>
                   </div>
+                  {this.state.data.products &&
+                    this.state.data.products.map((data) => (
+                      <ProductSlide
+                        key={data.product_id}
+                        imageURL={data.imageURL}
+                      />
+                    ))}
                 </div>
-                {this.state.data.products &&
-                  this.state.data.products.map((data) => (
-                    <ProductSlide
-                      key={data.product_id}
-                      imageURL={data.imageURL}
-                    />
-                  ))}
               </div>
+              {this.state.data.products &&
+                this.state.data.products.map((data) => (
+                  <ProductInfo
+                    popupProducts={this.state.data["pop-up products"]}
+                    key={data.name}
+                    name={data.name}
+                    price={data.price}
+                    colors={data.colors}
+                    size={data.size}
+                  />
+                ))}
+              <ProductAside />
             </div>
-            {this.state.data.products &&
-              this.state.data.products.map((data) => (
-                <ProductInfo
-                  popupProducts={this.state.data["pop-up products"]}
-                  key={data.name}
-                  name={data.name}
-                  price={data.price}
-                  colors={data.colors}
-                  size={data.size}
-                />
-              ))}
-            <ProductAside />
-          </div>
-          <Footer />
-        </main>
-      </div>
+            <Footer />
+          </main>
+        </div>
+      </>
     );
   }
 }
