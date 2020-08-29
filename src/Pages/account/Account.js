@@ -6,17 +6,13 @@ import Nav from "../../Components/nav/Nav";
 import Footer from "../../Components/footer/Footer";
 import { API_LOGIN } from "../../config";
 import "./Account.scss";
-
 class Account extends Component {
   state = {
     email: "",
     password: "",
   };
-
   handleOnclick = (e) => {
     const api_login = API_LOGIN;
-
-    e.preventDefault();
     fetch(`${api_login}`, {
       method: "POST",
       body: JSON.stringify({
@@ -26,19 +22,27 @@ class Account extends Component {
     })
       .then((response) => response.json())
       .then((response) => {
-        console.log(response);
+        if (response.message === "SUCCESS") {
+          alert("로그인 성공");
+          this.props.history.push("/");
+        } else {
+          alert("로그인 실패");
+        }
       });
   };
-
   handleOnChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };
-
   render() {
     return (
       <div className="AccountContainer">
         <Nav alwaysNavOn alwaysBgOn />
-        <form className="accountForm">
+        <form
+          className="accountForm"
+          onSubmit={(e) => {
+            e.preventDefault();
+          }}
+        >
           <div className="loginText">LOGIN</div>
           <div>
             <span>Please enter your e-mail and password:</span>
@@ -67,5 +71,4 @@ class Account extends Component {
     );
   }
 }
-
 export default Account;

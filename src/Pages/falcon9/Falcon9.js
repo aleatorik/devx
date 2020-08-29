@@ -103,7 +103,7 @@ class Falcon9 extends Component {
       deleteVewingPage("Video");
     }
     if (
-      screenHeight * 3 + 322 <= nowPosition &&
+      screenHeight * 3 + 322 + 300 <= nowPosition &&
       nowPosition < screenHeight * 5 + 322
     ) {
       delaySetViewingPage("Engines");
@@ -140,7 +140,6 @@ class Falcon9 extends Component {
   };
 
   render() {
-    console.log(this.state.isInView);
     const {
       nowScrollPosition,
       isModalRendered,
