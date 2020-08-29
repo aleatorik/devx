@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import ColorSelectModal from "../../colorModal/ColorSelectModal";
 import FooIcon from "../fooIcon/FooIcon";
-import Config from "../../../../Config";
+import Config from "../../../../config";
 import "./ProductInfo.scss";
 
 class ProductInfo extends Component {
@@ -27,7 +27,7 @@ class ProductInfo extends Component {
 
   submitCartInfo = () => {
     if (sessionStorage.getItem("access_token")) {
-      return this.props.history.push("/cart");
+      return this.props.history.push("/shop/cart");
     } else {
       alert("로그인 먼저 진행해주세요");
       this.props.history.push("/account");
@@ -35,7 +35,7 @@ class ProductInfo extends Component {
 
     const { color, quantity, size } = this.state;
 
-    fetch(`${Config.API}products/1`, {
+    fetch(`${Config.API}/products/1`, {
       method: "POST",
       body: JSON.stringify({
         color: color,
