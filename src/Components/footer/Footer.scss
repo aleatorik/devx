@@ -16,6 +16,11 @@
   }
 }
 
+.fixedBottom {
+  position: fixed;
+  bottom: 0;
+}
+
 .footerUl {
   display: flex;
   font-weight: bold;

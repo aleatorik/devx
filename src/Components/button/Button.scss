@@ -1,13 +1,13 @@
 @import "../../Styles/common.scss";
 
-button {
-    width: 400px;
-    height: 44px;
-    @include fontBold;
-    font-weight: bold;
-    font-size: 14px;
-    color: $fontColor-white;
-    background: black;
-    border: none;
-    outline: none;
+.hohyunBtn {
+  width: 400px;
+  height: 44px;
+  @include fontBold;
+  font-weight: bold;
+  font-size: 14px;
+  color: $fontColor-white;
+  background: black;
+  border: none;
+  outline: none;
 }

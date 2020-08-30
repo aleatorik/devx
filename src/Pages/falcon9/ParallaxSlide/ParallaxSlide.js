@@ -20,7 +20,8 @@ class ParallaxSlide extends Component {
   }
 
   recordDistanceToRevealTop = () => {
-    const distanceToRevealTop = this.reveal.getBoundingClientRect().top;
+    const distanceToRevealTop =
+      this.reveal && this.reveal.getBoundingClientRect().top;
     this.setState({ distanceToRevealTop });
   };
 
