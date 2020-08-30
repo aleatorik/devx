@@ -14,7 +14,7 @@ class Detail extends Component {
   };
 
   componentDidMount() {
-    fetch(`${Config.API}products/1`)
+    fetch(`${Config.API}/products/1`)
       .then((res) => res.json())
       .then((res) => this.setState({ data: res }));
   }
