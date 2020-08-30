@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Nav from "../../Components/nav/Nav";
 import Footer from "../../Components/footer/Footer";
 import ProductList from "./Components/productList/ProductList";
-import Config from "../../Config.js";
+import Config from "../../config.js";
 import "./Shop.scss";
 
 class Shop extends Component {

@@ -5,7 +5,7 @@ import ProductSlide from "../detail/Components/productSlide/ProductSlide";
 import ProductInfo from "../detail/Components/productInfo/ProductInfo";
 import ProductAside from "../detail/Components/productAside/ProductAside";
 import Footer from "../../Components/footer/Footer";
-import Config from "../../Config";
+import Config from "../../config";
 import "./Detail.scss";
 
 class Detail extends Component {
