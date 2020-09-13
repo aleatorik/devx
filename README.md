@@ -1,68 +1,123 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# DevX : We are Explorers to Best Developer
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 프로젝트 소개
 
-### `npm start`
+엘론머스크가 설립한 민간 우주기업 Space X 웹사이트 클론 프로젝트
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<br>
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## 개발 인원 및 기간
 
-### `npm test`
+- 기간: 2020.08.18 - 2020.08.28 (약 2주)
+- 개발 인원: 프론트엔드 [황연욱](https://github.com/younuk23), [이호현](https://github.com/LeeHoHyun-hemtory), [송다슬](https://github.com/aleatorik)(PM) 백엔드 [김기욱](https://github.com/keywookkim), [이지연](https://github.com/leejirun)
+- 프론트 [Repository](https://github.com/wecode-bootcamp-korea/11-DevX-frontend) 백엔드 [Repository](https://github.com/wecode-bootcamp-korea/11-DevX-backend)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<br>
 
-### `npm run build`
+### 데모 영상
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[https://www.youtube.com/watch?v=mBAsMK8By9w&t=8s](https://www.youtube.com/watch?v=mBAsMK8By9w&t=8s)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+<br>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 사용 기술
 
-### `npm run eject`
+<br>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### 공통
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. HTTP
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+2. Git
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+3. Linux
 
-## Learn More
+4. VScode
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+5. Trello
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- 프로젝트 스크럼 툴 ([링크](https://trello.com/b/7GVBeJ4W/wespace))
 
-### Code Splitting
+6. AWS
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+- AWS EC2 서버 배포
+- AWS RDS 구축
+- AWS S3 구축 및 이미지 업로더 연결
 
-### Analyzing the Bundle Size
+7. PostMan
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+- API 테스트 및 결과 내용 공유
 
-### Making a Progressive Web App
+<br>
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+### 프론트엔드
 
-### Advanced Configuration
+1. React.js
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+- react-router-dom : 브라우저에서 사용되는 리액트 라우터
+- node-sass : Sass(.scss) 파일을 css 파일로 컴파일
 
-### Deployment
+2. SCSS
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+- SASS의 모든 기능을 지원하면서 CSS 구문과 완전히 호환됨
 
-### `npm run build` fails to minify
+<br>
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+### 백엔드
+
+1. Python
+
+- BeautifulSoup : 웹 크롤링 및 파싱
+- Selenium : 내장 기능을 활용해 다수의 웹 데이터를 효율적으로 크롤링
+- List comprehension : 코드실행 효율 향상
+- Pandas : 간편한 csv파일 저장 및 열람
+- ast : list_eval 기능 사용
+
+2. Django
+
+- Bcrypt, PyJWT : 회원가입 시 기입한 비밀번호 암호화 및 토큰 발행
+- UnitTest : 클래스 단위 코드 디버깅
+- LoginDecorator : 발행한 토큰을 통한 등록회원 인증/인가
+- Endpoint : User, Product, Order
+
+3. MySQL
+
+- DB 구축 및 데이터 업로더 제작
+
+<br>
+
+## 구현 페이지 및 기능
+
+<br>
+
+- 로그인 & 회원가입 기능
+- 제품 소개(Falcon 9) 페이지
+
+  - Stat컴포넌트 화면에 들어왔을 시 0 -> 해당 stat Value만큼 수치 증가 기능
+
+  - 슬라이더 기능
+
+  - Youtube Video Modal 창 기능
+
+  - Modal mount, unmount 애니메이션
+
+  - Parallax 스크롤 기능
+
+  - Parallax부분에서 일정스크롤 이상 시 기존 컴포넌트와 오버랩되면서 Slider 컴포넌트 보여주는 기능
+
+  - MenuTab 기능(선택된 Tab에 따라 다른 내용 렌더)
+
+  - 일정 Scroll에 도달했을 시(해당 컴포넌트가 viewport안에 위치했을 시) text fadein Animation 기능
+
+- 쇼핑 메인 페이지
+
+  - Map 함수를 통한 상품 리스트 구현
+  - Fetch를 통한 API 호출
+
+- 상품 상세 페이지
+
+  - 컬러 옵션 버튼 클릭 시, 팝업 모달 창 구현
+  - 'add to cart' 버튼 클릭 시, 유저 토큰 인증 처리 후 해당 페이지 이동
+  - SVG 컴포넌트화

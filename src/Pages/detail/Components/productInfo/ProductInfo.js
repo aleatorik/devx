@@ -10,6 +10,7 @@ class ProductInfo extends Component {
     super(props);
 
     this.state = {
+      product_id: "",
       color: "",
       size: "",
       quantity: "",
@@ -27,35 +28,43 @@ class ProductInfo extends Component {
 
   submitCartInfo = () => {
     if (sessionStorage.getItem("access_token")) {
+      fetch(`${Config.API}/order/add`, {
+        headers: {
+          Authorization: sessionStorage.getItem("access_token"),
+        },
+        method: "POST",
+        body: JSON.stringify({
+          product_id: product_id,
+          color: color,
+          size: size,
+          quantity: quantity,
+        }),
+      })
+        .then((res) => res.json())
+        .then((res) => {
+          if (res.token) {
+            sessionStorage.setItem("access_token", res.token);
+          }
+        });
+
       return this.props.history.push("/shop/cart");
     } else {
       alert("로그인 먼저 진행해주세요");
       this.props.history.push("/account");
     }
 
-    const { color, quantity, size } = this.state;
-
-    fetch(`${Config.API}/products/1`, {
-      method: "POST",
-      body: JSON.stringify({
-        color: color,
-        size: size,
-        quantity: quantity,
-      }),
-    })
-      .then((res) => res.json())
-      .then((res) => console.log(res));
+    const { product_id, color, quantity, size } = this.state;
   };
 
   render() {
-    const { name, price, colors, size } = this.props;
+    const { product_id, price, colors, size } = this.props;
 
     return (
       <div className="ProductInfo">
         <div className="product__info">
           <div className="container">
             <div className="productMeta">
-              <h1 className="productMeta__title heading">{name}</h1>
+              <h1 className="productMeta__title heading">{product_id}</h1>
               <div className="productMeta__priceList heading">
                 <div className="productMeta__price price">
                   <span className="money">${price}</span>
@@ -184,7 +193,7 @@ class ProductInfo extends Component {
         )}
         {this.props.popupProducts && (
           <ColorSelectModal
-            name={this.props.popupProducts[0].name}
+            product_id={this.props.popupProducts[0].product_id}
             color={this.props.popupProducts[0].colors}
             img={this.props.popupProducts[0].imageURL}
             price={this.props.popupProducts[0].price}
