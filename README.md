@@ -18,7 +18,7 @@
 
 ### 데모 영상
 
-[https://www.youtube.com/watch?v=mBAsMK8By9w&t=8s](https://www.youtube.com/watch?v=mBAsMK8By9w&t=8s)
+[https://www.youtube.com/watch?v=gG9l7pZVQ4Y&t=2s](https://www.youtube.com/watch?v=gG9l7pZVQ4Y&t=2s)
 
 <br>
 
